@@ -1,0 +1,31 @@
+<div id="hero">
+  <h1>{{ .Page.Params.hero.name }}</h1>
+
+  <p class="links">
+    {{ if isset .Page.Params.hero "links" }}
+      {{ $.Scratch.Set "queries" slice }}
+      {{ range .Page.Params.hero.Links }} <!-- get all pairs -->
+        {{ range $k, $v := . }} <!-- get each key $k and value $v -->
+          <a href="{{ $v }}">{{ $k }}</a>
+          ·
+        {{ end }}
+      {{ end }}
+    {{end}}
+  </p>
+
+  <p class="description">
+    {{ .Page.Params.hero.heading }}
+  </p>
+
+  <p class="links">
+    {{ if isset .Page.Params.hero "contact" }}
+      {{ $.Scratch.Set "queries" slice }}
+      {{ range .Page.Params.hero.Contact }} <!-- get all pairs -->
+        {{ range $k, $v := . }} <!-- get each key $k and value $v -->
+          <a href="{{ $v }}">{{ $k }}</a>
+          ·
+        {{ end }}
+      {{ end }}
+    {{end}}
+  </p>
+</div>
