@@ -1,0 +1,26 @@
+{{ $projects := partialCached "func/GetProjects" . "projects" }}
+{{ $paginator := .Paginate $projects }}
+{{ range $index, $project := $paginator.Pages }}
+
+  <div class="project">
+
+    <a href="{{ $project.RelPermalink }}"></a>
+
+    <div class="badges">
+      <span class="badge badge-light"></span>
+    </div>
+
+    <h3>{{ $project.Params.title }}</h3>
+    
+    <div class="align-container">
+      <div class="information-container">
+        <p class="description">
+          {{ $project.Params.description }}
+        </p>
+      </div>
+      <button type="button" class="btn btn-light">See more <span>👉</span></button>
+    </div>
+
+  </div>
+
+{{ end }}
