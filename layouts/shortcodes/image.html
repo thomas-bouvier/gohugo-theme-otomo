@@ -1,0 +1,21 @@
+{{ if .IsNamedParams }}
+
+  <div class="img-zoom">
+    <a href="{{ .Get "src" }}" rel="lightbox">
+      <img src="{{ .Get "src" }}" class="img-fluid">
+    </a>
+  </div>
+
+  <figcaption class="fig-caption">{{.Get "title" }}</figcaption>
+
+{{ else }}
+
+  <div class="img-zoom">
+    <a href="{{ .Get 0 }}" rel="lightbox">
+      <img src="{{ .Get 0 }}" class="img-fluid">
+    </a>
+  </div>
+
+  <figcaption class="fig-caption">{{.Get 1 }}</figcaption>
+
+{{ end }}
