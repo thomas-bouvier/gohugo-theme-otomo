@@ -1,6 +1,26 @@
 @import "vars.scss";
 @import "navigation.scss";
 @import "hero.scss";
+@import "project.scss";
+
+::-moz-selection {
+  background: #c6c6c6;
+  color: white;
+}
+
+::selection {
+  background: #c6c6c6;
+  color: white;
+}
+
+body {
+  font-family: 'Karla', sans-serif;
+  background-color: #ededed;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+}
 
 .section {
   width: 100%;
@@ -16,16 +36,13 @@
     max-width: 100%;
     padding: 2rem;;
   }
-
-  p {
-    @media screen and (max-width: 735px){
-        padding: 0 4rem;
-        max-width: 567px;
-    }
-  }
 }
 
 .content {
   margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.hero {
   margin-bottom: 100px;
 }

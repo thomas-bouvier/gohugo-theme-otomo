@@ -1,9 +1,24 @@
 {{ define "main" }}
 
-  {{ partial "project/hero.html" .Params }}
+  <article class="section">
 
-  <section class="section narrow">
-    {{ .Content }}
-  </section>
+    <div class="heading-container">
+      <h1>{{ .Title }}</h1>
+  
+      <p class="description">
+        {{ .Description }}
+      </p>
+  
+  
+      <div class="featured-image">
+      
+      </div>
+    </div>
+
+    <div class="project-content">
+      {{ .Content }}
+    </div>
+
+  </article>
 
 {{ end }}

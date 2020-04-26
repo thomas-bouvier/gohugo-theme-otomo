@@ -1,40 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Karla:400,400i,700&subset=latin-ext');
 
-::-moz-selection {
-  background: #c6c6c6;
-  color: white;
-}
-
-::selection {
-  background: #c6c6c6;
-  color: white;
-}
-
-body {
-  font-family: 'Karla', sans-serif;
-  background-color: #f7fbfb;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-weight: bold;
-}
-
-.container {
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: 15px;
-  padding-left: 15px;
-  max-width: 767px;
-}
-
-.min-container {
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: 15px;
-  padding-left: 15px;
-  max-width: 655px;
-}
-
 img,
 .video-container {
   box-shadow: 0 6px 50px rgba(0, 0, 0, .06);
@@ -85,13 +50,6 @@ figcaption {
 
 section#projects {
   margin-top: 85vh;
-  background-color: #f6fafb;
-  padding-bottom: 35px;
-}
-
-article {
-  margin-top: 50vh;
-  background-color: #f6fafb;
   padding-bottom: 35px;
 }
 
@@ -240,16 +198,6 @@ button.btn-primary {
   border-radius: 16px;
   font-weight: 200;
   font-size: 0.9em;
-}
-
-article {
-  padding-bottom: 1em;
-}
-
-article p {
-  padding-top: 35px;
-  padding-bottom: 20px;
-  line-height: 1.75em;
 }
 
 footer {
