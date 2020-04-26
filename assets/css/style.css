@@ -101,56 +101,6 @@ article {
   }
 }
 
-#hero {
-  position: absolute;
-  top: -60px;
-  left: 50%;
-  transform: translateX(-50%);
-  height: calc(100vh - 56px);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-}
-
-@media (max-width: 767px) {
-  #hero {
-    top: 5vh;
-  }
-}
-
-@media (max-width: 991px) {
-  #hero {
-    width: 90%;
-  }
-}
-
-#hero.project-page {
-  top: -140px;
-}
-
-#hero h1 {
-  font-size: 2em;
-  font-weight: 500;
-}
-
-#hero a {
-  border-bottom: 1px dashed white;
-}
-
-#hero p.description {
-  font-size: 1.05em;
-  font-weight: 200;
-  line-height: 1.9em;
-  margin-top: 2em;
-  margin-bottom: 1.5em;
-}
-
-#hero p.links a {
-  margin-top: 1.5em;
-  border-bottom: none;
-}
-
 .project {
   position: relative;
   /* to make the entire div clickable */

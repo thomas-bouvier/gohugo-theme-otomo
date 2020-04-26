@@ -1,31 +1,19 @@
-<div id="hero">
-  <h1>{{ .Page.Params.hero.name }}</h1>
+<section class="section" id="hero">
 
-  <p class="links">
-    {{ if isset .Page.Params.hero "links" }}
-      {{ $.Scratch.Set "queries" slice }}
-      {{ range .Page.Params.hero.Links }} <!-- get all pairs -->
-        {{ range $k, $v := . }} <!-- get each key $k and value $v -->
-          <a href="{{ $v }}">{{ $k }}</a>
-          ·
-        {{ end }}
-      {{ end }}
-    {{end}}
-  </p>
-
-  <p class="description">
-    {{ .Page.Params.hero.heading }}
-  </p>
+  <div class="heading-container" style="maxWidth: {{ .Page.Params.hero.maxWidthPX }}px;">
+    <h2 class="hero-heading">{{ .Page.Params.hero.heading }}</h2>
+  </div>
 
   <p class="links">
     {{ if isset .Page.Params.hero "contact" }}
       {{ $.Scratch.Set "queries" slice }}
-      {{ range .Page.Params.hero.Contact }} <!-- get all pairs -->
-        {{ range $k, $v := . }} <!-- get each key $k and value $v -->
+      {{ range .Page.Params.hero.Contact }}
+        {{ range $k, $v := . }}
           <a href="{{ $v }}">{{ $k }}</a>
           ·
         {{ end }}
       {{ end }}
     {{end}}
   </p>
-</div>
+  
+</section>

@@ -1,0 +1,31 @@
+@import "vars.scss";
+@import "navigation.scss";
+@import "hero.scss";
+
+.section {
+  width: 100%;
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 4rem;
+
+  @media screen and (max-width: 1070px) {
+    max-width: 850px;
+  }
+
+  @media screen and (max-width: 540px) {
+    max-width: 100%;
+    padding: 2rem;;
+  }
+
+  p {
+    @media screen and (max-width: 735px){
+        padding: 0 4rem;
+        max-width: 567px;
+    }
+  }
+}
+
+.content {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
