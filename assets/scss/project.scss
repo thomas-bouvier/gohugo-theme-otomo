@@ -2,12 +2,16 @@
   background-color: red;
   width: 80%;
   height: 200px;
-  margin: 0 auto;
+  margin: 75px auto 0;
+}
+
+iframe {
+  width: 80%;
+  height: 200px;
+  margin: 75px auto 0;
 }
 
 .description {
-  padding-top: 30px;
-  padding-bottom: 30px;
   font-size: 22px;
 }
 
@@ -17,22 +21,28 @@ article {
   p {
     line-height: 1.756;
     font-size: 18px;
-    color: var(--articleText);
-    font-family: var(--sanserif);
     -webkit-transition: var(--color-mode-transition);
     -o-transition: var(--color-mode-transition);
     transition: var(--color-mode-transition);
-    margin: 0 auto 35px;
+    margin: 0 auto;
     width: 100%;
     max-width: 600px;
-    padding-top: 25px;
+    padding-top: 20px;
     padding-bottom: 20px;
     line-height: 1.75em;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    margin: 0 auto 35px;
+    margin: 35px auto 20px;
     width: 100%;
     max-width: 600px;
+  }
+
+  .heading-container {
+
+    h1 {
+      margin-bottom: 0;
+      font-weight: 700;
+    }
   }
 }
