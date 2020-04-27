@@ -1,0 +1,9 @@
+{{- $title := .Get "title" | default (.Get 0) -}}
+
+<div class="gallery">
+  {{ .Inner }}
+</div>
+
+{{ with $title }}
+  <figcaption class="fig-caption">{{ $title }}</figcaption>
+{{ end }}

@@ -1,21 +1,16 @@
-{{ if .IsNamedParams }}
+{{- $src := .Get "src" | default (.Get 0) -}}
+{{- $title := .Get "title" | default (.Get 1) -}}
+
+{{ with $src }}
 
   <div class="img-zoom">
-    <a href="{{ .Get "src" }}" rel="lightbox">
-      <img src="{{ .Get "src" }}" class="img-fluid">
+    <a href="{{ $src }}" rel="lightbox">
+      <img src="{{ $src }}" class="img-fluid">
     </a>
   </div>
 
-  <figcaption class="fig-caption">{{.Get "title" }}</figcaption>
-
-{{ else }}
-
-  <div class="img-zoom">
-    <a href="{{ .Get 0 }}" rel="lightbox">
-      <img src="{{ .Get 0 }}" class="img-fluid">
-    </a>
-  </div>
-
-  <figcaption class="fig-caption">{{.Get 1 }}</figcaption>
+  {{ with $title }}
+    <figcaption class="fig-caption">{{ $title }}</figcaption>
+  {{ end }}
 
 {{ end }}
