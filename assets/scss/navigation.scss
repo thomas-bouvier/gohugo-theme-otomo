@@ -34,7 +34,7 @@
   }
 }
 
-.nav-controls{
+.nav-controls {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -42,6 +42,10 @@
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+
+  a {
+    margin-left: 25px;
+  }
 }
 
 /*PHABLET*/
@@ -51,7 +55,7 @@
   }
 }
 
-.header-hidden{
+.header-hidden {
   position: absolute;
   display: inline-block;
   opacity: 0;

@@ -3,17 +3,5 @@
   <div class="heading-container">
     <h2 class="hero-heading">{{ .Page.Params.hero.heading }}</h2>
   </div>
-
-  <p class="links">
-    {{ if isset .Page.Params.hero "contact" }}
-      {{ $.Scratch.Set "queries" slice }}
-      {{ range .Page.Params.hero.Contact }}
-        {{ range $k, $v := . }}
-          <a href="{{ $v }}">{{ $k }}</a>
-          ·
-        {{ end }}
-      {{ end }}
-    {{end}}
-  </p>
   
 </section>
