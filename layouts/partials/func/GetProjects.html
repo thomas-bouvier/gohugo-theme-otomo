@@ -11,8 +11,11 @@
   @example - Go Template
     {{ $projects := partialCached "func/GetProjects" . "projects" }}
 */}}
+
 {{ $projects := slice }}
+
 {{ with where site.RegularPages "Type" "project" }}
   {{ $projects = . }}
 {{ end }}
+
 {{ return $projects }}

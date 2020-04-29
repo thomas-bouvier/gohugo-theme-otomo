@@ -17,4 +17,6 @@
   {{ $fluidbox := resources.Get "css/fluidbox/fluidbox.min.css" }}
   <link rel="stylesheet" href="{{ $fluidbox.RelPermalink }}">
 
+  {{ partial "seo/print.html" . }}
+
 </head>

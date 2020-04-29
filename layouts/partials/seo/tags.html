@@ -1,0 +1,15 @@
+{{/* 
+	Print SEO meta tags
+	
+	@access private
+
+  @context map [page (Page), seo (Map)]
+*/}}
+
+{{- $seo := .seo -}}
+
+<title>{{ $seo.title }}</title>
+<meta name="description" content="{{ $seo.description }}">
+
+<meta property="og:title" content="{{ $seo.title }}">
+<meta property="og:description" content="{{ $seo.description }}">

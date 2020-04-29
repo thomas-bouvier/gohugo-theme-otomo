@@ -1,0 +1,63 @@
+{{/* 
+	Structure SEO Data for a given page
+	+ print tags
+	+ print jsonld
+	
+	@access public
+
+	@context Page 
+
+	@example - Go Template
+		{{ partial "seo/tags" . }}
+*/}}
+ 
+{{/* Adding the seo map to scratch which will receive SEO key/value pairs. */}}
+{{- $.Scratch.Set "seo" dict -}}
+
+{{/* Title
+  ---------------------------- 
+	We use the following logic
+	1. Every pages: `{.Title} | {.Site.Title}`
+  2. Homepage: only {.Site.Title}
+*/}}
+  
+{{- if not .IsHome -}}
+
+	{{/* 1. `{.Title} | {.Site.Title}` */}}
+  {{- $.Scratch.SetInMap "seo" "title" (printf "%s | %s" .Title .Site.Title ) -}}
+
+{{- else -}}
+
+	{{/* 2. `{.Site.Title}` */}}
+  {{- $.Scratch.SetInMap "seo" "title" .Site.Title -}}
+
+{{- end -}}
+
+{{/* Description
+	---------------------------- 
+	We use the following order of precedence
+	1. SEO Description, then, if not found,
+	2. Description, then if not found,
+  3. site description
+*/}}
+
+{{ $description := "" }}
+
+{{/* 1. SEO Description */}}
+{{- if .Params.seo.description -}}
+  {{- $description = .Params.seo.description -}}
+  
+{{/* 2. Description
+	    As it could potentially contain HTML tags, we strip them with plainify */}}
+{{- else if .Params.description -}}
+  {{- $description = .Params.description | plainify -}}
+  
+{{- else -}}
+{{/* 3. site description  */}}
+	{{ $description = .Site.Params.Description }}
+{{- end -}}
+
+{{- $.Scratch.SetInMap "seo" "description" $description -}}
+
+
+{{ partial "seo/tags" (dict "page" $ "seo" ($.Scratch.Get "seo")) }}
