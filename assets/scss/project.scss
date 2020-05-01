@@ -36,7 +36,7 @@ article {
     width: 80%;
     margin: 35px auto;
 
-    @media screen and (max-width: 1070px) {
+    @media screen and (max-width: $desktop) {
       width: 100%;
     }
   }
@@ -47,7 +47,7 @@ article {
     align-items: flex-start;
     width: 80%;
 
-    @media screen and (max-width: 1070px) {
+    @media screen and (max-width: $desktop) {
       margin: 0 auto;
       display: block;
       width: 100%;
@@ -59,7 +59,7 @@ article {
       flex: 1;
       padding: 0 20px;
 
-      @media screen and (max-width: 1070px) {
+      @media screen and (max-width: $desktop) {
         padding: 0;
         width: 100%;
       }
@@ -70,7 +70,7 @@ article {
     width: 80%;
     margin: 35px auto;
 
-    @media screen and (max-width: 1070px) {
+    @media screen and (max-width: $desktop) {
       width: 100%;
     }
   }

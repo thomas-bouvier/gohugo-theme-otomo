@@ -1,0 +1,103 @@
+section#projects {
+  margin-top: 85vh;
+  padding-bottom: 35px;
+}
+
+@media (max-width: 767px) {
+  section#projects {
+    margin-top: 110vh;
+  }
+}
+
+.project {
+  position: relative;
+  /* to make the entire div clickable */
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  display: inline-block;
+  margin-top: 50px;
+
+  &:nth-of-type(1) {
+    margin-top: 0
+  }
+  
+  @media (min-width: $tablet) {
+    width: 47%;
+    margin-right: 4%;
+  
+    &:nth-of-type(2n) {
+      margin-right: 0
+    }
+  
+    &:nth-of-type(1),
+    &:nth-of-type(2) {
+      margin-top: 0
+    }
+  }
+  
+
+  button.btn-light span {
+    max-width: 0;
+    -webkit-transition: max-width 0.2s;
+    transition: max-width 0.2s;
+    display: inline-block;
+    vertical-align: top;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  
+  &:hover {
+    cursor: pointer;
+
+    button.btn-light span {
+      max-width: 14rem;
+      -webkit-transition: max-width 1s;
+      transition: max-width 1s;
+    }    
+  }
+
+  .badges {
+    padding-bottom: 6px;
+
+    .badge-light {
+      color: #b2b2b2;
+      font-size: 0.65em;
+      padding: 0;
+      padding-right: 0.5em;
+      background-color: transparent;
+    }
+  }
+
+  a {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    text-decoration: none;
+    z-index: 10;
+    border-bottom: none;
+  }
+
+  .information-container {
+    clear: both;
+  }
+  
+  h3 {
+    font-size: 1.3em;
+  }
+  
+  p.description {
+    font-weight: 200;
+    font-size: 0.9em;
+    color: #7a7a7a;
+    line-height: 140%;
+    padding-top: 5px;
+  }
+
+  .align-container {
+    display: inline-block;
+    vertical-align: top;
+  }
+}

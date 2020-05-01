@@ -1,6 +1,7 @@
 @import "vars.scss";
 @import "navigation.scss";
 @import "hero.scss";
+@import "projects.scss";
 @import "project.scss";
 
 @import url('https://fonts.googleapis.com/css2?family=Arimo&display=swap');
@@ -42,15 +43,6 @@ a:hover {
   max-width: 1220px;
   margin: 0 auto;
   padding: 0 4rem;
-
-  @media screen and (max-width: 1070px) {
-    max-width: 850px;
-  }
-
-  @media screen and (max-width: 540px) {
-    max-width: 100%;
-    padding: 2rem;
-  }
 }
 
 .content {
@@ -60,4 +52,32 @@ a:hover {
 
 .hero {
   margin-bottom: 100px;
+}
+
+a.btn-light,
+button.btn-light {
+  background-color: white;
+  box-shadow: 0 6px 50px rgba(0, 0, 0, .06);
+  border-radius: 16px;
+  font-weight: 200;
+  font-size: 0.9em;
+}
+
+button.btn-warning {
+  background-color: #ffd696;
+  border: none;
+  box-shadow: 0 6px 50px rgba(0, 0, 0, .06);
+  border-radius: 16px;
+  font-weight: 200;
+  font-size: 0.9em;
+}
+
+button.btn-primary {
+  background-color: #000c21;
+  color: white;
+  border: none;
+  box-shadow: 0 6px 50px rgba(0, 0, 0, .06);
+  border-radius: 16px;
+  font-weight: 200;
+  font-size: 0.9em;
 }
