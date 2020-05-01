@@ -10,12 +10,6 @@
   justify-content: space-between;
 }
 
-@media screen and (max-height: 800px) {
-  .nav-container{
-    padding-top: 50px;
-  }
-}
-
 .logo-link {
   position: relative;
   display: -webkit-box;
@@ -26,11 +20,17 @@
   align-items: center;
   font-size: 1.5em;
   font-weight: 2;
-}
 
-@media screen and (max-width: 1280px) {
-  .logo-link{
-      left: 0
+  .logo {
+    @media screen and (max-width: $phone) {
+      display: none;
+    }
+  }
+
+  .logo-small {
+    @media screen and (min-width: $phone) {
+      display: none;
+    }
   }
 }
 
@@ -45,13 +45,6 @@
 
   a {
     margin-left: 25px;
-  }
-}
-
-/*PHABLET*/
-@media screen and (max-width: 540px){
-  .nav-controls{
-      right: -5px;
   }
 }
 

@@ -3,7 +3,7 @@ section#projects {
   padding-bottom: 35px;
 }
 
-@media (max-width: 767px) {
+@media screen and (max-width: $tablet) {
   section#projects {
     margin-top: 110vh;
   }
@@ -22,7 +22,7 @@ section#projects {
     margin-top: 0
   }
   
-  @media (min-width: $tablet) {
+  @media screen and (min-width: $tablet) {
     width: 47%;
     margin-right: 4%;
   

@@ -43,6 +43,10 @@ a:hover {
   max-width: 1220px;
   margin: 0 auto;
   padding: 0 4rem;
+
+  @media screen and (max-width: $phone) {
+    padding: 0 2.5rem;
+  }
 }
 
 .content {
@@ -63,21 +67,23 @@ button.btn-light {
   font-size: 0.9em;
 }
 
-button.btn-warning {
-  background-color: #ffd696;
-  border: none;
-  box-shadow: 0 6px 50px rgba(0, 0, 0, .06);
-  border-radius: 16px;
-  font-weight: 200;
-  font-size: 0.9em;
-}
+button {
+  .btn-primary {
+    background-color: #000c21;
+    color: white;
+    border: none;
+    box-shadow: 0 6px 50px rgba(0, 0, 0, .06);
+    border-radius: 16px;
+    font-weight: 200;
+    font-size: 0.9em;
+  }
 
-button.btn-primary {
-  background-color: #000c21;
-  color: white;
-  border: none;
-  box-shadow: 0 6px 50px rgba(0, 0, 0, .06);
-  border-radius: 16px;
-  font-weight: 200;
-  font-size: 0.9em;
+  .btn-warning {
+    background-color: #ffd696;
+    border: none;
+    box-shadow: 0 6px 50px rgba(0, 0, 0, .06);
+    border-radius: 16px;
+    font-weight: 200;
+    font-size: 0.9em;
+  }
 }
