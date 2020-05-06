@@ -3,9 +3,15 @@
 @import "hero.scss";
 @import "projects.scss";
 @import "project.scss";
+@import "buttons.scss";
 
 @import url('https://fonts.googleapis.com/css2?family=Arimo&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
 
 ::-moz-selection {
   background: #c6c6c6;
@@ -19,23 +25,39 @@
 
 body {
   font-family: 'Arimo', sans-serif;
-  background-color: #fff;
+  color: var(--secondary);
+  background-color: var(--background-color);
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Merriweather', sans-serif;
   font-weight: bold;
+  color: var(--primary)
 }
 
 a {
-  color: inherit;
+  color: var(--primary);
   font-weight: 700;
   border-bottom: 1px dashed #000;
+
+  &:hover {
+    border-bottom: none;
+    text-decoration: none;
+  }
 }
 
-a:hover {
-  border-bottom: none;
-  text-decoration: none;
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
 }
 
 .section {

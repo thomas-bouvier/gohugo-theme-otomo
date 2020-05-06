@@ -1,0 +1,225 @@
+.icon-wrapper {
+  opacity: 0.5;
+  position: relative;
+  border-radius: 5px;
+  width: 40px;
+  height: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-transition: opacity 0.3s ease;
+  -o-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+  margin-left: 15px;
+  -webkit-transform: scale(0.7);
+  -ms-transform: scale(0.7);
+  transform: scale(0.7);
+
+  &:hover {
+    opacity: 1;
+  }
+
+  @media screen and (max-width: 735px) {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    margin-left: 10px;
+    
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}
+
+.icon-wrapper[class*="data-ally"]:focus::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -30%;
+  width: 100%;
+  height: 160%;
+  border: 2px solid var(--accent);
+  background: rgba(255, 255, 255, 0.01);
+  border-radius: 5px;
+}
+
+.sun-rays {
+  position: relative;
+  right: -16px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: 2px solid var(--primary);
+  background: var(--primary);
+  -webkit-transform: 1;
+  -ms-transform: 1;
+  transform: 1;
+  -webkit-transition: all 0.45s ease;
+  -o-transition: all 0.45s ease;
+  transition: all 0.45s ease;
+  overflow: hidden;
+  -webkit-box-shadow: 0 -23px 0 var(--primary),
+      0 23px 0 var(--primary),
+      23px 0 0 var(--primary),
+      -23px 0 0 var(--primary),
+      15px 15px 0 var(--primary),
+      -15px 15px 0 var(--primary),
+      15px -15px 0 var(--primary),
+      -15px -15px 0 var(--primary);
+  box-shadow: 0 -23px 0 var(--primary),
+      0 23px 0 var(--primary),
+      23px 0 0 var(--primary),
+      -23px 0 0 var(--primary),
+      15px 15px 0 var(--primary),
+      -15px 15px 0 var(--primary),
+      15px -15px 0 var(--primary),
+      -15px -15px 0 var(--primary);
+  -webkit-transform: scale(0.6);
+  -ms-transform: scale(0.6);
+  transform: scale(0.6);
+}
+
+.moon-or-sun {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid
+  var(--primary);
+  background: var(--primary);
+  -webkit-transform: 1;
+  -ms-transform: 1;
+  transform: 1;
+  -webkit-transition: all 0.45s ease;
+  -o-transition: all 0.45s ease;
+  transition: all 0.45s ease;
+  overflow: hidden;
+}
+
+.moon-mask {
+  position: absolute;
+  right: -1px;
+  top: -8px;
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  border: 0;
+  background: var(--background-color);
+  -webkit-transform: translate("0, 0");
+  -ms-transform: translate("0, 0");
+  transform: translate("0, 0");
+  opacity: 1;
+  -webkit-transition: var(--color-mode-transition), -webkit-transform 0.45s ease;
+  transition: var(--color-mode-transition), -webkit-transform 0.45s ease;
+  -o-transition: transform 0.45s ease, var(--color-mode-transition);
+  transition: transform 0.45s ease, var(--color-mode-transition);
+  transition: transform 0.45s ease, var(--color-mode-transition), -webkit-transform 0.45s ease;
+}
+
+.mask-to-sun-animation{
+  -webkit-animation-name: mask-to-sun;
+          animation-name: mask-to-sun;
+  -webkit-animation-duration: 0.4s;
+          animation-duration: 0.4s;
+}
+
+.mask-to-moon-animation{
+  -webkit-animation-name: mask-to-moon;
+          animation-name: mask-to-moon;
+  -webkit-animation-duration: 0.4s;
+          animation-duration: 0.4s;
+}
+
+.to-sun-animation{
+  -webkit-animation-name: to-sun;
+          animation-name: to-sun;
+  -webkit-animation-duration: 0.4s;
+          animation-duration: 0.4s;
+}
+
+.to-moon-animation{
+  -webkit-animation-name: to-moon;
+          animation-name: to-moon;
+  -webkit-animation-duration: 0.4s;
+          animation-duration: 0.4s;
+}
+
+.expand-rays{
+  -webkit-animation-name: expand-rays;
+          animation-name: expand-rays;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+}
+
+.contract-rays{
+  -webkit-animation-name: contract-rays;
+          animation-name: contract-rays;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+}
+
+@-webkit-keyframes mask-to-sun {
+  from {top: -8px; right: -5px; -webkit-transform: scale(1); transform: scale(1);}
+  to {top: -25px; right: -15px; -webkit-transform: scale(0.5); transform: scale(0.5);}
+}
+
+@keyframes mask-to-sun {
+  from {top: -8px; right: -5px; -webkit-transform: scale(1); transform: scale(1);}
+  to {top: -25px; right: -15px; -webkit-transform: scale(0.5); transform: scale(0.5);}
+}
+
+@-webkit-keyframes mask-to-moon {
+  from {top: -25px; right: -15px; -webkit-transform: scale(0.5); transform: scale(0.5);}
+  to {top: -8px; right: -5px; -webkit-transform: scale(1); transform: scale(1);}
+}
+
+@keyframes mask-to-moon {
+  from {top: -25px; right: -15px; -webkit-transform: scale(0.5); transform: scale(0.5);}
+  to {top: -8px; right: -5px; -webkit-transform: scale(1); transform: scale(1);}
+}
+
+@-webkit-keyframes to-sun {
+  from {-webkit-transform: scale(1);transform: scale(1);}
+  to {-webkit-transform: scale(0.5);transform: scale(0.5);}
+}
+
+@keyframes to-sun {
+  from {-webkit-transform: scale(1);transform: scale(1);}
+  to {-webkit-transform: scale(0.5);transform: scale(0.5);}
+}
+
+@-webkit-keyframes to-moon {
+  from {-webkit-transform: scale(0.5);transform: scale(0.5);}
+  to {-webkit-transform: scale(1);transform: scale(1);}
+}
+
+@keyframes to-moon {
+  from {-webkit-transform: scale(0.5);transform: scale(0.5);}
+  to {-webkit-transform: scale(1);transform: scale(1);}
+}
+
+@-webkit-keyframes expand-rays {
+  from {-webkit-transform: scale(0.1);transform: scale(0.1);}
+  to {-webkit-transform: scale(0.6);transform: scale(0.6);}
+}
+
+@keyframes expand-rays {
+  from {-webkit-transform: scale(0.1);transform: scale(0.1);}
+  to {-webkit-transform: scale(0.6);transform: scale(0.6);}
+}
+
+@-webkit-keyframes contract-rays {
+  from {-webkit-transform: scale(0.6);transform: scale(0.6);}
+  to {-webkit-transform: scale(0.1);transform: scale(0.1);}
+}
+
+@keyframes contract-rays {
+  from {-webkit-transform: scale(0.6);transform: scale(0.6);}
+  to {-webkit-transform: scale(0.1);transform: scale(0.1);}
+}

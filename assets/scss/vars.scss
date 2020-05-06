@@ -1,3 +1,10 @@
 $phone: 440px;
+$phone-large: 575px;
 $tablet: 767px;
 $desktop: 1070px;
+
+body {
+  --primary: #000;
+  --secondary: #7a7a7a;
+  --background-color: #fff;
+}

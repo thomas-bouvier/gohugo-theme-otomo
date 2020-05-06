@@ -29,7 +29,8 @@
     <script src="{{ $fluidbox.RelPermalink }}"></script>
     {{ $script := resources.Get "js/fluidbox.js" }}
     <script src="{{ $script.RelPermalink }}"></script>
-
+    {{ $toggleColors := resources.Get "js/toggleColors.js" }}
+    <script src="{{ $toggleColors.RelPermalink }}"></script>
   </body>
 
 </html>

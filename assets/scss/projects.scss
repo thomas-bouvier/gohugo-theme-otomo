@@ -61,7 +61,7 @@ section#projects {
     padding-bottom: 6px;
 
     .badge-light {
-      color: #b2b2b2;
+      color: var(--secondary);
       font-size: 0.65em;
       padding: 0;
       padding-right: 0.5em;
@@ -91,7 +91,6 @@ section#projects {
   p.description {
     font-weight: 200;
     font-size: 0.9em;
-    color: #7a7a7a;
     line-height: 140%;
     padding-top: 5px;
   }

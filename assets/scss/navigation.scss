@@ -22,13 +22,13 @@
   font-weight: 2;
 
   .logo {
-    @media screen and (max-width: $phone) {
+    @media screen and (max-width: ($phone-large - 1)) {
       display: none;
     }
   }
 
   .logo-small {
-    @media screen and (min-width: $phone) {
+    @media screen and (min-width: $phone-large) {
       display: none;
     }
   }
