@@ -5,8 +5,7 @@
 @import "project.scss";
 @import "buttons.scss";
 
-@import url('https://fonts.googleapis.com/css2?family=Arimo&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Work+Sans:wght@400&display=swap');
 
 * {
   margin: 0;
@@ -24,13 +23,13 @@
 }
 
 body {
-  font-family: 'Arimo', sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: var(--secondary);
   background-color: var(--background-color);
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Merriweather', sans-serif;
+  font-family: 'Work Sans', sans-serif;
   font-weight: bold;
   color: var(--primary)
 }
@@ -67,7 +66,7 @@ button {
   padding: 0 4rem;
 
   @media screen and (max-width: $phone) {
-    padding: 0 2.5rem;
+    padding: 0 1.5rem;
   }
 }
 
