@@ -6,11 +6,17 @@
 
     <a href="{{ $project.RelPermalink }}"></a>
 
+    <!--
     <div class="badges">
       {{ range .Params.tags }}
         <span class="badge badge-light">#{{ . | upper }}</span>
       {{ end }}
     </div>
+    -->
+
+    {{ with $project.Params.thumbnail }}
+      <img src="{{ $project.RelPermalink }}/{{ $project.Params.thumbnail }}">
+    {{ end }}
 
     <h3>{{ $project.Params.title }}</h3>
     

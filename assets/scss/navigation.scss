@@ -1,14 +1,40 @@
 .nav-container {
   font-family: 'Work Sans';
-  position: relative;
-  z-index: 100;
-  padding-top: 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 20px 0;
+  transition: box-shadow 0.5s, transform 0.5s;
+  background-color: var(--background-color);
+
+  &.scroll-down {
+    transform: translate3d(0, -100%, 0);
+  }
+   
+  &.scroll-up {
+    transform: none;
+  }
+
+  &.show-shadows {
+    box-shadow: 0 25px 35px rgba(0, 0, 0, 0.075);
+    -moz-box-shadow: 0 25px 35px rgba(0, 0, 0, 0.075);
+    -webkit-box-shadow: 0 25px 35px rgba(0, 0, 0, 0.075);
+  }
+}
+
+.nav-section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  width: 100%;
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 4rem;
 }
 
 .logo-link {
