@@ -12,24 +12,40 @@
 article {
   padding-bottom: 35px;
 
+  .flex {
+    display: flex;
+    flex-wrap: wrap;
+
+    .left-col {
+      width: 20%;
+    }
+  
+    .main-col {
+      width: 60%;
+    }
+  }
+
   p {
     line-height: 1.756;
-    font-size: 18px;
+    font-size: 1.05em;
     -webkit-transition: var(--color-mode-transition);
     -o-transition: var(--color-mode-transition);
     transition: var(--color-mode-transition);
     margin: 0 auto;
     width: 100%;
     max-width: 650px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 2em;
     line-height: 1.75em;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    margin: 35px auto 20px;
+    margin: 0 auto 20px;
     width: 100%;
     max-width: 650px;
+  }
+
+  h1 {
+    font-size: 1.4em;
   }
 
   .img-zoom {
@@ -45,7 +61,6 @@ article {
     margin: 35px auto 35px;
     display: flex;
     align-items: flex-start;
-    width: 80%;
 
     @media screen and (max-width: $desktop) {
       margin: 0 auto;
@@ -67,12 +82,7 @@ article {
   }
 
   .video {
-    width: 80%;
     margin: 35px auto;
-
-    @media screen and (max-width: $desktop) {
-      width: 100%;
-    }
   }
 
   figcaption {

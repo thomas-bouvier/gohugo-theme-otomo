@@ -1,0 +1,27 @@
+{{ $paragraphs1 := split .Content "<h1 " }}
+{{ range $index1, $p := $paragraphs1 }}
+
+  <div class="flex">
+
+    {{ $paragraphs2 := split $p "</h1>" }}
+    {{ range $index2, $pp := $paragraphs2 }}
+
+      {{ with $pp }}
+        {{ if (eq $index2 0) }}
+
+          <div class="left-col">
+            {{ printf "<h1 %s</h1>" $pp | safeHTML }}
+          </div>
+
+        {{ else }}
+
+          <div class="main-col">
+            {{ printf "%s" $pp | safeHTML }}
+          </div>
+        
+        {{ end }}
+      {{ end }}
+  
+    {{ end }}
+  </div>
+{{ end }}

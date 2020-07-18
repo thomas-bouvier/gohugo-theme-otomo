@@ -2,17 +2,19 @@
 
   <article class="section">
 
-    <div class="heading-container">
-      <h1>{{ .Title }}</h1>
+    <div class="flex">
+      <div class="left-col">
+        <h3>{{ .Title }}</h3>
+      </div>
   
-      <p class="description">
-        {{ .Description }}
-      </p>
+      <div class="main-col">
+        <p class="description">
+          {{ .Description }}
+        </p>
+      </div>
     </div>
 
-    <div class="project-content">
-      {{ .Content }}
-    </div>
+    {{ partial "content.html" . }}
 
   </article>
 
