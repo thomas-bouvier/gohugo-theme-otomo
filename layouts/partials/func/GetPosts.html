@@ -1,0 +1,21 @@
+{{/*
+  GetPosts
+
+  @context Page (.)
+
+  @access public
+
+  @return Collection
+          - Page (.)
+
+  @example - Go Template
+    {{ $posts := partialCached "func/GetPosts" . "posts" }}
+*/}}
+
+{{ $posts := slice }}
+
+{{ with where site.RegularPages "Type" "post" }}
+  {{ $posts = . }}
+{{ end }}
+
+{{ return $posts }}

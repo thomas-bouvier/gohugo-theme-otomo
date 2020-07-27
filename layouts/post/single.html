@@ -1,0 +1,21 @@
+{{ define "main" }}
+
+  <article class="section">
+
+    <div class="flex">
+      <div class="left-col">
+        <h3>{{ .Title }}</h3>
+      </div>
+  
+      <div class="main-col">
+        <p class="description">
+          {{ .Description }}
+        </p>
+      </div>
+    </div>
+
+    {{ partial "content.html" . }}
+
+  </article>
+
+{{ end }}
