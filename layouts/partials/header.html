@@ -1,3 +1,5 @@
+{{ $i18n := .Site.IsMultiLingual }}
+
 <header class="nav-container">
 
   <nav class="nav-section">
@@ -10,10 +12,14 @@
 
     <div class="nav-controls">
       {{ range .Site.Menus.main }}
-        <a href="{{ .URL }}">
+        <a href="{{ .URL | relLangURL }}">
           {{ .Pre }}
           <span>{{ .Name }}</span>
         </a>
+      {{ end }}
+
+      {{ if $i18n }}
+        {{ partial "components/lang-selector.html" . }}
       {{ end }}
 
       <button id="themeColorButton" class="icon-wrapper"> 
@@ -21,6 +27,7 @@
         <div id="moonOrSun" class="moon-or-sun"></div>
         <div id="moonMask" class="moon-mask"></div>
       </button>
+
     </div>
 
   </nav>
