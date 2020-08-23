@@ -14,7 +14,7 @@
 
 {{ $projects := slice }}
 
-{{ with where site.RegularPages "Type" "project" }}
+{{ with where site.RegularPages "Type" "projects" }}
   {{ $projects = . }}
 {{ end }}
 
