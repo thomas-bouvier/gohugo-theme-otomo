@@ -1,0 +1,32 @@
+{{ define "main" }}
+
+  <div class="section">
+
+    {{ range .Data.Pages }}
+
+      <div class="project">
+
+        <a href="{{ .RelPermalink }}"></a>
+    
+        {{ with .Params.thumbnail }}
+          <img src="{{ .RelPermalink }}/{{ .Params.thumbnail }}">
+        {{ end }}
+    
+        <h3>{{ .Title }}</h3>
+        
+        <div class="align-container">
+          <div class="information-container">
+            <p class="description">
+              {{ .Description }}
+            </p>
+          </div>
+        
+        </div>
+    
+      </div>
+
+    {{ end }}
+
+  </div>
+
+{{ end }}

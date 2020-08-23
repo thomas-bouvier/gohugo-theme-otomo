@@ -1,0 +1,13 @@
+{{ define "main" }}
+
+  <div class="section">
+
+    {{ range .Data.Pages }}
+
+      <a href="{{ .Permalink }}" type="button" class="btn btn-light">{{ .Title }}</a>
+
+    {{ end }}
+
+  </div>
+
+{{ end }}
