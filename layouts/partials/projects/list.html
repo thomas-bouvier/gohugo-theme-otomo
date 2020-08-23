@@ -1,29 +1,33 @@
-{{ $projects := partialCached "func/GetProjects" . "projects" }}
-{{ $paginator := .Paginate $projects }}
-{{ range $index, $project := $paginator.Pages }}
+<section class="section">
 
-  <div class="project">
+  {{ $projects := partialCached "func/GetProjects" . "projects" }}
+  {{ $paginator := .Paginate $projects }}
+  {{ range $index, $project := $paginator.Pages }}
 
-    <a href="{{ $project.RelPermalink }}"></a>
+    <div class="project">
 
-    {{ with $project.Params.thumbnail }}
-      <img src="{{ $project.RelPermalink }}/{{ $project.Params.thumbnail }}">
-    {{ end }}
+      <a href="{{ $project.RelPermalink }}"></a>
 
-    <h3>{{ $project.Params.title }}</h3>
-    
-    <div class="align-container">
-      <div class="information-container">
-        <p class="description">
-          {{ $project.Params.description }}
-        </p>
+      {{ with $project.Params.thumbnail }}
+        <img src="{{ $project.RelPermalink }}/{{ $project.Params.thumbnail }}">
+      {{ end }}
+
+      <h3>{{ $project.Params.title }}</h3>
+      
+      <div class="align-container">
+        <div class="information-container">
+          <p class="description">
+            {{ $project.Params.description }}
+          </p>
+        </div>
+
+        {{ range .Params.tags }}
+          <button type="button" class="btn btn-light">{{ . }}</button>
+        {{ end }}
       </div>
 
-      {{ range .Params.tags }}
-        <button type="button" class="btn btn-light">{{ . }}</button>
-      {{ end }}
     </div>
 
-  </div>
+  {{ end }}
 
-{{ end }}
+</section>
