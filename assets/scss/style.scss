@@ -4,8 +4,14 @@
 @import "projects.scss";
 @import "project.scss";
 @import "buttons.scss";
+@import "footer.scss";
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Inter:wght@400&display=swap');
+
+@font-face {
+  font-family: 'Domaine';
+  src: url('../fonts/domaine/DomaineText-Regular.woff2') format('truetype');
+}
 
 * {
   margin: 0;
@@ -29,8 +35,8 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Inter', sans-serif;
-  font-weight: bold;
+  font-family: 'Domaine', sans-serif;
+  font-weight: 400;
   color: var(--primary)
 }
 
@@ -61,12 +67,13 @@ button {
 
 .section {
   width: 100%;
-  max-width: 1220px;
   margin: 0 auto;
-  padding: 0 4rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
 
   @media screen and (max-width: $phone) {
-    padding: 0 1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 }
 
