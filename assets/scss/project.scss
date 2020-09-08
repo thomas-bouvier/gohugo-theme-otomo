@@ -5,10 +5,6 @@
   margin: 75px auto 0;
 }
 
-.description {
-  font-size: 22px;
-}
-
 article {
   padding-bottom: 35px;
 
@@ -26,7 +22,6 @@ article {
   }
 
   p {
-    line-height: 1.756;
     font-size: 1.05em;
     -webkit-transition: var(--color-mode-transition);
     -o-transition: var(--color-mode-transition);

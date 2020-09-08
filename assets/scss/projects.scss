@@ -41,16 +41,16 @@ section#projects {
       margin-top: 0
     }
   }
-  
 
-  button.btn-light span {
-    max-width: 0;
-    -webkit-transition: max-width 0.2s;
-    transition: max-width 0.2s;
-    display: inline-block;
-    vertical-align: top;
-    white-space: nowrap;
-    overflow: hidden;
+  a {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    text-decoration: none;
+    z-index: 10;
+    border-bottom: none;
   }
   
   &:hover {
@@ -63,42 +63,46 @@ section#projects {
     }    
   }
 
-  .badges {
-    padding-bottom: 6px;
+  h3 {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 25px;
+  }
+  
+  p {
+    &.intro {
+      font-weight: 600;
+      font-size: .875rem;
+      font-style: normal;
+      color: inherit;
+      line-height: 1.25em;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+    }
 
-    .badge-light {
-      color: var(--secondary);
-      font-size: 0.65em;
-      padding: 0;
-      padding-right: 0.5em;
-      background-color: transparent;
+    &.description {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 1.2em;
+      padding-top: 5px;
     }
   }
 
-  a {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
+  .button {
+    color: #262626;
+    letter-spacing: .1em;
+    text-align: center;
+    text-transform: uppercase;
     text-decoration: none;
-    z-index: 10;
-    border-bottom: none;
+    cursor: pointer;
+    border: 1px solid #e6e6e6;
+    border-radius: .125em;
+    box-shadow: none;
+    transition: all .2s ease-in-out;
   }
 
   .information-container {
     clear: both;
-  }
-  
-  h3 {
-    font-size: 1.3em;
-  }
-  
-  p.description {
-    font-weight: 200;
-    font-size: 0.9em;
-    line-height: 140%;
-    padding-top: 5px;
   }
 
   .align-container {
