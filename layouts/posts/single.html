@@ -1,21 +1,21 @@
 {{ define "main" }}
 
-  <article class="section">
+  <div class="section">
 
-    <div class="flex">
-      <div class="left-col">
-        <h3>{{ .Title }}</h3>
-      </div>
-  
-      <div class="main-col">
-        <p class="description">
-          {{ .Description }}
-        </p>
-      </div>
-    </div>
+    <article>
 
-    {{ partial "content.html" . }}
+      <p class="intro">
+        {{ .Params.date.Format "2 January 2006 15:04" }} · {{ .ReadingTime }} min
+      </p>
 
-  </article>
+      <h1>{{ .Title }}</h1>
+
+      <p>{{ .Description }}</p>
+
+      {{ .Content }}
+
+    </article>
+
+  </div>
 
 {{ end }}

@@ -2,7 +2,7 @@
 @import "navigation.scss";
 @import "hero.scss";
 @import "projects.scss";
-@import "project.scss";
+@import "article.scss";
 @import "buttons.scss";
 @import "footer.scss";
 
@@ -54,12 +54,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-  color: var(--primary);
-  font-weight: 700;
-  border-bottom: 1px dashed #000;
+  color: var(--secondary);
+  text-decoration: none;
+  border-bottom: 1px solid var(--secondary-color);
 
   &:hover {
-    border-bottom: none;
+    color: var(--secondary-color);
     text-decoration: none;
   }
 }
@@ -79,8 +79,4 @@ a {
 .content {
   margin-top: 170px;
   margin-bottom: 100px;
-}
-
-.hero {
-  margin-bottom: 120px;
 }
