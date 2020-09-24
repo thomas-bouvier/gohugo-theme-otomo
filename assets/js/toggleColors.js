@@ -75,13 +75,19 @@ function toggleColors() {
 }
 
 function makeDark() {
-  bodyElement.style.setProperty('--primary', "#fff");
-  bodyElement.style.setProperty('--secondary', "#bcbdbe");
+  bodyElement.style.setProperty('--primary-text-color', "#fff");
+  bodyElement.style.setProperty('--secondary-text-color', "#bcbdbe");
+  bodyElement.style.setProperty('--button-color', "#fff");
+  bodyElement.style.setProperty('--button-hover-color', "#e0e0e0");
   bodyElement.style.setProperty('--background-color', "#191b1e");
+  bodyElement.style.setProperty('--inverted-color', "#000c21");
 }
 
 function makeLight() {
-  bodyElement.style.setProperty('--primary', "");
-  bodyElement.style.setProperty('--secondary', "");
+  bodyElement.style.setProperty('--primary-text-color', "");
+  bodyElement.style.setProperty('--secondary-text-color', "");
+  bodyElement.style.setProperty('--button-color', "");
+  bodyElement.style.setProperty('--button-hover-color', "");
   bodyElement.style.setProperty('--background-color', "");
+  bodyElement.style.setProperty('--inverted-color', "");
 }

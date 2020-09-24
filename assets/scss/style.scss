@@ -34,7 +34,7 @@
 }
 
 body {
-  color: var(--secondary);
+  color: var(--secondary-text-color);
   background-color: var(--background-color);
 
 }
@@ -50,11 +50,11 @@ p {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Domaine', serif;
   font-weight: 400;
-  color: var(--primary)
+  color: var(--primary-text-color)
 }
 
 a {
-  color: var(--secondary);
+  color: var(--secondary-text-color);
   text-decoration: none;
   border-bottom: 1px solid var(--secondary-color);
 

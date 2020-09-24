@@ -1,22 +1,11 @@
-section#projects {
-  margin-top: 85vh;
-  padding-bottom: 35px;
-}
-
-@media screen and (max-width: $tablet) {
-  section#projects {
-    margin-top: 110vh;
-  }
-}
-
-.project {
+.item {
   position: relative;
   /* to make the entire div clickable */
   width: 100%;
   margin: 0 auto;
   padding: 0;
   display: inline-block;
-  margin-top: 50px;
+  margin-top: 7rem;
 
   &:nth-of-type(1) {
     margin-top: 0
@@ -28,7 +17,7 @@ section#projects {
     margin-bottom: 20px;
   }
   
-  @media screen and (min-width: $tablet) {
+  @media screen and (min-width: $desktop) {
     width: 47%;
     margin-right: 4%;
   
@@ -42,6 +31,7 @@ section#projects {
     }
   }
 
+  /*
   a {
     position: absolute;
     width: 100%;
@@ -52,16 +42,7 @@ section#projects {
     z-index: 10;
     border-bottom: none;
   }
-  
-  &:hover {
-    cursor: pointer;
-
-    button.btn-light span {
-      max-width: 14rem;
-      -webkit-transition: max-width 1s;
-      transition: max-width 1s;
-    }    
-  }
+  */
 
   h3 {
     font-size: 24px;
@@ -84,21 +65,9 @@ section#projects {
       font-size: 20px;
       font-weight: 400;
       line-height: 1.2em;
-      padding-top: 5px;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
     }
-  }
-
-  .button {
-    color: #262626;
-    letter-spacing: .1em;
-    text-align: center;
-    text-transform: uppercase;
-    text-decoration: none;
-    cursor: pointer;
-    border: 1px solid #e6e6e6;
-    border-radius: .125em;
-    box-shadow: none;
-    transition: all .2s ease-in-out;
   }
 
   .information-container {

@@ -5,6 +5,20 @@ button {
   border: none;
   outline: none;
   background: transparent;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+a.btn {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  outline: none;
+  background: transparent;
   text-transform: uppercase;
   cursor: pointer;
 
@@ -13,8 +27,8 @@ button {
   }
 
   &.btn-primary {
-    background-color: #000c21;
-    color: white;
+    background-color: var(--button-color);
+    color: var(--inverted-color);
     border: none;
     border-radius: 0;
     font-weight: 400;
@@ -22,7 +36,13 @@ button {
     font-style: normal;
     line-height: 1.25;
     text-transform: uppercase;
-    letter-spacing: .1em;
+    letter-spacing: .1rem;
+    padding: .5rem;
+
+    &:hover {
+      outline: none;
+      background-color: var(--button-hover-color);
+    }
   }
 
   &.btn-light {
@@ -100,8 +120,8 @@ button {
   width: 9px;
   height: 9px;
   border-radius: 50%;
-  border: 2px solid var(--primary);
-  background: var(--primary);
+  border: 2px solid var(--primary-text-color);
+  background: var(--primary-text-color);
   -webkit-transform: 1;
   -ms-transform: 1;
   transform: 1;
@@ -109,22 +129,22 @@ button {
   -o-transition: all 0.45s ease;
   transition: all 0.45s ease;
   overflow: hidden;
-  -webkit-box-shadow: 0 -23px 0 var(--primary),
-      0 23px 0 var(--primary),
-      23px 0 0 var(--primary),
-      -23px 0 0 var(--primary),
-      15px 15px 0 var(--primary),
-      -15px 15px 0 var(--primary),
-      15px -15px 0 var(--primary),
-      -15px -15px 0 var(--primary);
-  box-shadow: 0 -23px 0 var(--primary),
-      0 23px 0 var(--primary),
-      23px 0 0 var(--primary),
-      -23px 0 0 var(--primary),
-      15px 15px 0 var(--primary),
-      -15px 15px 0 var(--primary),
-      15px -15px 0 var(--primary),
-      -15px -15px 0 var(--primary);
+  -webkit-box-shadow: 0 -23px 0 var(--primary-text-color),
+      0 23px 0 var(--primary-text-color),
+      23px 0 0 var(--primary-text-color),
+      -23px 0 0 var(--primary-text-color),
+      15px 15px 0 var(--primary-text-color),
+      -15px 15px 0 var(--primary-text-color),
+      15px -15px 0 var(--primary-text-color),
+      -15px -15px 0 var(--primary-text-color);
+  box-shadow: 0 -23px 0 var(--primary-text-color),
+      0 23px 0 var(--primary-text-color),
+      23px 0 0 var(--primary-text-color),
+      -23px 0 0 var(--primary-text-color),
+      15px 15px 0 var(--primary-text-color),
+      -15px 15px 0 var(--primary-text-color),
+      15px -15px 0 var(--primary-text-color),
+      -15px -15px 0 var(--primary-text-color);
   -webkit-transform: scale(0.6);
   -ms-transform: scale(0.6);
   transform: scale(0.6);
@@ -135,9 +155,8 @@ button {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  border: 2px solid
-  var(--primary);
-  background: var(--primary);
+  border: 2px solid var(--primary-text-color);
+  background: var(--primary-text-color);
   -webkit-transform: 1;
   -ms-transform: 1;
   transform: 1;

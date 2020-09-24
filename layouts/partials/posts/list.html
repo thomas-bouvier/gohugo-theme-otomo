@@ -4,9 +4,7 @@
   {{ $paginator := .Paginate $posts }}
   {{ range $index, $post := $paginator.Pages }}
 
-    <div class="project">
-
-      <a href="{{ $post.RelPermalink }}"></a>
+    <div class="item">
 
       {{ with $post.Params.thumbnail }}
         <img src="{{ $post.RelPermalink }}/{{ $post.Params.thumbnail }}">
@@ -26,7 +24,7 @@
         </div>
 
         {{ range .Params.tags }}
-          <button type="button" class="btn btn-primary">{{ . }}</button>
+          <a class="btn btn-primary" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
         {{ end }}
       
       </div>

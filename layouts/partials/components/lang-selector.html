@@ -1,4 +1,3 @@
-{{ $lang  := site.Language.LanguageName }}
 {{ $langs := site.Home.Translations }}
 
 <div class="navbar-item has-dropdown is-hoverable">
@@ -6,7 +5,7 @@
     <span class="icon has-text-primary">
     </span>
     <span>
-      {{ $lang }}
+      {{ site.Language.LanguageName }}
     </span>
   </a>
 

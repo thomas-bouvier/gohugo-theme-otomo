@@ -4,9 +4,12 @@ $tablet: 767px;
 $desktop: 1070px;
 
 body {
-  --primary: #000;
-  --secondary: #262626;
+  --primary-text-color: #000000;
+  --secondary-text-color: #262626;
   --primary-color: #CBFFEA;
   --secondary-color: #0046D0;
-  --background-color: #ffffff;
+  --button-color: #000c21;
+  --button-hover-color: #2f3640;
+  --background-color: #fff;
+  --inverted-color: #fff;
 }

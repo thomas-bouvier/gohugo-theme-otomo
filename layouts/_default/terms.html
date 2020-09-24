@@ -2,9 +2,11 @@
 
   <div class="section">
 
+  	<h1>Tags</h1>
+
     {{ range .Data.Pages }}
 
-      <a href="{{ .Permalink }}" type="button" class="btn btn-light">{{ .Title }}</a>
+      <a class="btn btn-primary" href="{{ .Permalink }}">{{ .Title }}</a>
 
     {{ end }}
 

@@ -12,14 +12,7 @@ window.addEventListener("scroll", () => {
 
   if (currentScroll == 0) {
     nav.classList.remove(scrollUp);
-    nav.classList.remove(showShadows);
     return;
-  }
-
-  if (currentScroll > 65) {
-    nav.classList.add(showShadows);
-  } else {
-    nav.classList.remove(showShadows);
   }
    
   if (currentScroll > lastScroll && !nav.classList.contains(scrollDown)) {
