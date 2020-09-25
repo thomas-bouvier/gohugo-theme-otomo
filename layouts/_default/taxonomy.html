@@ -1,31 +1,59 @@
 {{ define "main" }}
 
-  <div class="section">
+  <div class="container-fluid">
 
-    {{ range .Data.Pages }}
+    <div class="row">
 
-      <div class="project">
+      <div class="col-lg-5">
 
-        <a href="{{ .RelPermalink }}"></a>
-    
-        {{ with .Params.thumbnail }}
-          <img src="{{ .RelPermalink }}/{{ .Params.thumbnail }}">
-        {{ end }}
-    
-        <h3>{{ .Title }}</h3>
-        
-        <div class="align-container">
-          <div class="information-container">
-            <p class="description">
-              {{ .Description }}
-            </p>
-          </div>
-        
+        <h1>Tagged "{{ .Data.Term }}"</h1>
+
+        <div class="more-content">
+
+          <h5>Explore more content</h3>
+
+          {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+            <a class="btn btn-primary" href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}">{{ $name }}</a>
+          {{ end }}
+
         </div>
-    
+
       </div>
 
-    {{ end }}
+      <div class="col-lg">
+        
+        {{ range .Data.Pages }}
+
+          <div class="item">
+        
+            {{ with .Params.thumbnail }}
+              <img src="{{ .RelPermalink }}/{{ .Params.thumbnail }}">
+            {{ end }}
+
+            <p class="intro">
+              {{ .Params.date.Format "2 January 2006 15:04" }} · {{ .ReadingTime }} min
+            </p>
+        
+            <a href="{{ .RelPermalink }}">
+              <h3>{{ .Title }}</h3>
+            </a>
+            
+            <div class="align-container">
+              <div class="information-container">
+                <p class="description">
+                  {{ .Description }}
+                </p>
+              </div>
+            
+            </div>
+        
+          </div>
+
+        {{ end }}
+
+      </div>
+
+    </div>
 
   </div>
 

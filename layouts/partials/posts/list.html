@@ -1,36 +1,42 @@
-<section class="section">
+<section class="container-fluid">
 
-  {{ $posts := partialCached "func/GetPosts" . "posts" }}
-  {{ $paginator := .Paginate $posts }}
-  {{ range $index, $post := $paginator.Pages }}
+  <div class="grid">
 
-    <div class="item">
+    {{ $posts := partialCached "func/GetPosts" . "posts" }}
+    {{ $paginator := .Paginate $posts }}
+    {{ range $index, $post := $paginator.Pages }}
 
-      {{ with $post.Params.thumbnail }}
-        <img src="{{ $post.RelPermalink }}/{{ $post.Params.thumbnail }}">
-      {{ end }}
+      <div class="item">
 
-      <p class="intro">
-        {{ $post.Params.date.Format "2 January 2006 15:04" }} · {{ $post.ReadingTime }} min
-      </p>
+        {{ with $post.Params.thumbnail }}
+          <img src="{{ $post.RelPermalink }}/{{ $post.Params.thumbnail }}">
+        {{ end }}
 
-      <h3>{{ $post.Params.title }}</h3>
-      
-      <div class="align-container">
-        <div class="information-container">
-          <p class="description">
-            {{ $post.Params.description }}
-          </p>
+        <p class="intro">
+          {{ $post.Params.date.Format "2 January 2006 15:04" }} · {{ $post.ReadingTime }} min
+        </p>
+
+        <a href="{{ $post.RelPermalink }}">
+          <h3>{{ $post.Params.title }}</h3>
+        </a>
+        
+        <div class="align-container">
+          <div class="information-container">
+            <p class="description">
+              {{ $post.Params.description }}
+            </p>
+          </div>
+
+          {{ range .Params.tags }}
+            <a class="btn btn-primary" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+          {{ end }}
+        
         </div>
 
-        {{ range .Params.tags }}
-          <a class="btn btn-primary" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
-        {{ end }}
-      
       </div>
 
-    </div>
+    {{ end }}
 
-  {{ end }}
+  </div>
 
 </section>

@@ -1,3 +1,29 @@
+.grid {
+  
+  .item {
+    display: inline-block;
+    margin-top: 6rem;
+  
+    &:nth-of-type(1) {
+      margin-top: 0;
+    }
+
+    @media screen and (min-width: $desktop) {
+      width: 47%;
+      margin-right: 4%;
+    
+      &:nth-of-type(2n) {
+        margin-right: 0
+      }
+    
+      &:nth-of-type(1),
+      &:nth-of-type(2) {
+        margin-top: 0
+      }
+    }
+  }
+}
+
 .item {
   position: relative;
   /* to make the entire div clickable */
@@ -5,7 +31,7 @@
   margin: 0 auto;
   padding: 0;
   display: inline-block;
-  margin-top: 7rem;
+  margin-top: 4rem;
 
   &:nth-of-type(1) {
     margin-top: 0
@@ -15,20 +41,6 @@
     max-width: 100%;
     width: 100%;
     margin-bottom: 20px;
-  }
-  
-  @media screen and (min-width: $desktop) {
-    width: 47%;
-    margin-right: 4%;
-  
-    &:nth-of-type(2n) {
-      margin-right: 0
-    }
-  
-    &:nth-of-type(1),
-    &:nth-of-type(2) {
-      margin-top: 0
-    }
   }
 
   /*
@@ -78,4 +90,8 @@
     display: inline-block;
     vertical-align: top;
   }
+}
+
+.more-content {
+  margin-bottom: 4rem;
 }

@@ -1,7 +1,7 @@
 @import "vars.scss";
 @import "navigation.scss";
 @import "hero.scss";
-@import "projects.scss";
+@import "items.scss";
 @import "article.scss";
 @import "buttons.scss";
 @import "footer.scss";
@@ -53,6 +53,14 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--primary-text-color)
 }
 
+h1 {
+  padding-bottom: 3rem;
+}
+
+h5 {
+  padding-bottom: 1rem;
+}
+
 a {
   color: var(--secondary-text-color);
   text-decoration: none;
@@ -64,9 +72,7 @@ a {
   }
 }
 
-.section {
-  width: 100%;
-  margin: 0 auto;
+.container-fluid {
   padding-left: 4rem;
   padding-right: 4rem;
 
