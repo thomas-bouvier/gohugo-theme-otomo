@@ -2,26 +2,11 @@
 
   <div class="container-fluid">
 
+    <h1>Tagged "{{ .Data.Term }}"</h1>
+
     <div class="row">
 
-      <div class="col-lg-5">
-
-        <h1>Tagged "{{ .Data.Term }}"</h1>
-
-        <div class="more-content">
-
-          <h5>Explore more content</h3>
-
-          {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
-            <a class="btn btn-primary" href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}">{{ $name }}</a>
-          {{ end }}
-
-        </div>
-
-      </div>
-
       <div class="col-lg">
-        
         {{ range .Data.Pages }}
 
           <div class="item">
@@ -34,9 +19,9 @@
               {{ .Params.date.Format "2 January 2006 15:04" }} · {{ .ReadingTime }} min
             </p>
         
-            <a href="{{ .RelPermalink }}">
-              <h3>{{ .Title }}</h3>
-            </a>
+            <h3>
+              <a href="{{ .RelPermalink }}">{{ .Title }} →</a>
+            </h3>
             
             <div class="align-container">
               <div class="information-container">
@@ -50,7 +35,18 @@
           </div>
 
         {{ end }}
+      </div>
 
+      <div class="col-lg-4">
+        <div class="more-content">
+
+          <h5>Explore more content</h3>
+
+          {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+            <a class="btn btn-primary" href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}">{{ $name }}</a>
+          {{ end }}
+
+        </div>
       </div>
 
     </div>

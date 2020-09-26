@@ -93,5 +93,9 @@
 }
 
 .more-content {
-  margin-bottom: 4rem;
+  margin-top: 4rem;
+
+  @media screen and (min-width: $desktop) {
+    margin-top: 0;
+  }
 }

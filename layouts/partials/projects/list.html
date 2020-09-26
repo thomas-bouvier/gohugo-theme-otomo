@@ -11,10 +11,10 @@
         {{ with $project.Params.thumbnail }}
           <img src="{{ $project.RelPermalink }}/{{ $project.Params.thumbnail }}">
         {{ end }}
-
-        <a href="{{ $project.RelPermalink }}">
-          <h3>{{ $project.Params.title }}</h3>
-        </a>
+        
+        <h3>
+          <a href="{{ $project.RelPermalink }}">{{ $project.Params.title }} →</a>
+        </h3>
         
         <div class="align-container">
           <div class="information-container">
