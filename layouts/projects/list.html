@@ -6,4 +6,14 @@
 
   {{ partial "projects/list.html" . }}
 
+  <div class="container-fluid">
+    <div class="rss-feed">
+      {{ with .OutputFormats.Get "rss" -}}
+        <p>
+          Don't miss any project by subscribing to my <a href="{{ .Permalink }}">portfolio RSS feed</a>.
+        </p>
+      {{ end -}}
+    </div>
+  </div>
+
 {{ end }}

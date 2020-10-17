@@ -51,6 +51,14 @@
 
     </div>
 
+    {{ with .OutputFormats.Get "rss" -}}
+      <div class="rss-feed">
+        <p>
+          Don't miss any content tagged "{{ $.Data.Term }}" by subscribing to the <a href="{{ .Permalink }}">{{ $.Data.Term }} RSS feed</a>.
+        </p>
+      </div>
+    {{ end -}}
+
   </div>
 
 {{ end }}
