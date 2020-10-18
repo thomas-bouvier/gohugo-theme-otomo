@@ -76,11 +76,12 @@ function toggleColors() {
 
 function makeDark() {
   bodyElement.style.setProperty('--primary-text-color', "#fff");
-  bodyElement.style.setProperty('--secondary-text-color', "#bcbdbe");
-  bodyElement.style.setProperty('--button-color', "#fff");
-  bodyElement.style.setProperty('--button-hover-color', "#e0e0e0");
-  bodyElement.style.setProperty('--background-color', "#191b1e");
-  bodyElement.style.setProperty('--inverted-color', "#000c21");
+  bodyElement.style.setProperty('--secondary-text-color', "#c7c7c7");
+  bodyElement.style.setProperty('--button-color', "#221d23");
+  bodyElement.style.setProperty('--button-hover-color', "#2c262e");
+  bodyElement.style.setProperty('--background-color', "#080f0f");
+  bodyElement.style.setProperty('--footer-color', "#080f0f");
+  bodyElement.style.setProperty('--inverted-color', "#fff");
 }
 
 function makeLight() {
@@ -89,5 +90,6 @@ function makeLight() {
   bodyElement.style.setProperty('--button-color', "");
   bodyElement.style.setProperty('--button-hover-color', "");
   bodyElement.style.setProperty('--background-color', "");
+  bodyElement.style.setProperty('--footer-color', "");
   bodyElement.style.setProperty('--inverted-color', "");
 }
