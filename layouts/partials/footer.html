@@ -1,6 +1,8 @@
 <footer class="container-fluid">
 
+  <!--
   <h3>Let's talk →</h3>
+  -->
 
   <ul>
     <li>
@@ -17,7 +19,11 @@
         Twitter
       </a>
     </li>
-    <li>RSS</li>
+    <li>
+      <a href="{{ "/index.xml" | relLangURL }}">
+        RSS
+      </a>
+    </li>
   </ul>
 
   Built with HTML & CSS with Sass atop Hugo (last build: {{ now.Format "2 January 2006 15:04" }}). This site intends to reduce its contribution to digital industry ecological footprint. Therefore the whole site and server services has been thought over. I do not track your personal data. Subscribe to my <a href="{{ "/index.xml" | relLangURL }}">RSS feed</a>.
