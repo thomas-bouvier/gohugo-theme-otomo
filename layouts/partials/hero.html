@@ -1,7 +1,22 @@
 <section class="container-fluid">
 
   <div class="heading-container">
-    <p class="hero-heading">{{ .Page.Params.hero.heading }}</p>
+
+    <p class="hero-heading">
+      {{ .Page.Params.hero.heading }}
+    </p>
+
+    <ul class="hero-links">
+      <li>
+        <a href="{{ "/projects" | relLangURL }}">
+          Portfolio
+        </a>
+      </li>
+      <li>
+        <a href="/about">
+          About me
+        </a>
+      </li>
   </div>
   
 </section>

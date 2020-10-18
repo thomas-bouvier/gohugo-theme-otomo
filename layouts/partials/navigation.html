@@ -6,8 +6,9 @@
 
     <div class="nav-controls">
 
-      <a class="logo-link" href="/">
-        <span class="logo">{{ .Site.Params.logo }}</span>
+      <a class="logo-link" href="{{ "/" | relLangURL }}">
+        <!-- I prefer the small logo for now -->
+        <span class="logo">{{ .Site.Params.logoSmall }}</span>
         <span class="logo-small">{{ .Site.Params.logoSmall }}</span>
         <span class="header-hidden">Navigate back to the homepage</span>
       </a>
