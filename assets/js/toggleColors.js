@@ -1,6 +1,5 @@
 document.getElementById("themeColorButton").addEventListener("click", toggleColors);
 
-let bodyElement = document.getElementsByTagName("BODY")[0];
 let moonOrSun = document.getElementById("moonOrSun");
 let sunRays = document.getElementById("sunRays");
 let moonMask = document.getElementById("moonMask");
@@ -9,25 +8,29 @@ initColors();
 initAnimation();
 
 function initAnimation() {
-  if (localStorage.getItem("isLight") === 'true') {
-    moonMask.style.top = "-8px";
-    moonMask.style.right = "-5px";
-    moonOrSun.style.transform = "scale(1)"
-    sunRays.style.transform = "scale(0.1)"
-  } else {
+  if (localStorage.getItem("dark") === 'true') {
     moonMask.style.top = "-25px";
     moonMask.style.right = "-15px";
     moonOrSun.style.transform = "scale(0.5)"
     sunRays.style.transform = "scale(0.6)"
+  } else {
+    moonMask.style.top = "-8px";
+    moonMask.style.right = "-5px";
+    moonOrSun.style.transform = "scale(1)"
+    sunRays.style.transform = "scale(0.1)"
   }
 }
 
 function initColors() {
-  if (localStorage.getItem("isLight") === null) {
-    localStorage.setItem("isLight", 'true');
+  if (localStorage.getItem("dark") == null) {
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      localStorage.setItem("dark", 'true');
+    } else {
+      localStorage.setItem("dark", 'false');
+    }
   }
 
-  if (localStorage.getItem("isLight") === 'false') {
+  if (localStorage.getItem("dark") === 'true') {
     makeDark();
   } else {
     makeLight();
@@ -35,24 +38,24 @@ function initColors() {
 }
 
 function toggleColors() {
-  if (localStorage.getItem("isLight") === 'true'){
+  if (localStorage.getItem("dark") === 'false') {
     makeDark();
 
     moonMask.classList.add("mask-to-sun-animation");
     moonOrSun.classList.add("to-sun-animation");
     sunRays.classList.add("expand-rays");
 
-    setTimeout(function(){
+    setTimeout(() => {
         sunRays.classList.remove("expand-rays");
     }, 500);
-    setTimeout(function(){
+    setTimeout(() => {
         moonMask.classList.remove("mask-to-sun-animation");
         moonOrSun.classList.remove("to-sun-animation");
         initAnimation();
     }, 400);
 
-    localStorage.setItem("isLight", 'false');
-  } else{
+    localStorage.setItem("dark", 'true');
+  } else {
     makeLight();
 
     moonMask.classList.add("mask-to-moon-animation");
@@ -60,36 +63,24 @@ function toggleColors() {
     sunRays.classList.add("contract-rays");
 
 
-    setTimeout(function(){
+    setTimeout(() => {
         sunRays.classList.remove("contract-rays");
     }, 500);
-    setTimeout(function(){
+    setTimeout(() => {
         moonMask.classList.remove("mask-to-moon-animation");
         moonOrSun.classList.remove("to-moon-animation");
         sunRays.classList.remove("contract-rays");
         initAnimation();
     }, 400);
 
-    localStorage.setItem("isLight", 'true');
+    localStorage.setItem("dark", 'false');
   }
 }
 
 function makeDark() {
-  bodyElement.style.setProperty('--primary-text-color', "#fff");
-  bodyElement.style.setProperty('--secondary-text-color', "#c7c7c7");
-  bodyElement.style.setProperty('--button-color', "#221d23");
-  bodyElement.style.setProperty('--button-hover-color', "#2c262e");
-  bodyElement.style.setProperty('--background-color', "#080f0f");
-  bodyElement.style.setProperty('--footer-color', "#080f0f");
-  bodyElement.style.setProperty('--inverted-color', "#fff");
+  document.documentElement.setAttribute('data-theme', 'dark');
 }
 
 function makeLight() {
-  bodyElement.style.setProperty('--primary-text-color', "");
-  bodyElement.style.setProperty('--secondary-text-color', "");
-  bodyElement.style.setProperty('--button-color', "");
-  bodyElement.style.setProperty('--button-hover-color', "");
-  bodyElement.style.setProperty('--background-color', "");
-  bodyElement.style.setProperty('--footer-color', "");
-  bodyElement.style.setProperty('--inverted-color', "");
+  document.documentElement.setAttribute('data-theme', 'light');
 }

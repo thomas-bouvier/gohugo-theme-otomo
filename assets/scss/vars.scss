@@ -3,7 +3,7 @@ $phone-large: 575px;
 $tablet: 767px;
 $desktop: 1070px;
 
-body {
+:root {
   --primary-text-color: #000000;
   --secondary-text-color: #262626;
   --primary-color: #cbffea;
@@ -12,5 +12,17 @@ body {
   --button-hover-color: #2f3640;
   --background-color: #fff;
   --footer-color: #cbffea;
+  --inverted-color: #fff;
+}
+
+[data-theme="dark"] {
+  --primary-text-color: #fff;
+  --secondary-text-color: #c7c7c7;
+  --primary-color: #cbffea;
+  --secondary-color: #003cb4;
+  --button-color: #221d23;
+  --button-hover-color: #2c262e;
+  --background-color: #000;
+  --footer-color: #000;
   --inverted-color: #fff;
 }
