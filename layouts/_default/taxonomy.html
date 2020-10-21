@@ -2,7 +2,7 @@
 
   <div class="container-fluid">
 
-    <h1>Tagged "{{ .Data.Term }}"</h1>
+    <h1>{{ i18n "tagged" . }}</h1>
 
     <div class="row">
 
@@ -40,7 +40,7 @@
       <div class="col-lg-4">
         <div class="more-content">
 
-          <h5>Explore more content</h3>
+          <h5>{{ i18n "more-content" }}</h3>
 
           {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
             <a class="btn btn-primary" href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}">{{ $name }}</a>
@@ -54,7 +54,7 @@
     {{ with .OutputFormats.Get "rss" -}}
       <div class="rss-feed">
         <p>
-          Don't miss any content tagged "{{ $.Data.Term }}" by subscribing to the <a href="{{ .Permalink }}">{{ $.Data.Term }} RSS feed</a>.
+          {{ i18n "dont-miss-tag" (dict "Tag" ($.Data.Term) "Permalink" (.Permalink)) | safeHTML }}
         </p>
       </div>
     {{ end -}}

@@ -6,7 +6,9 @@
 
   <ul>
     <li>
-      <a href="https://github.com/thomas-bouvier">Github</a>
+      <a href="https://github.com/thomas-bouvier">
+        Github
+      </a>
     </li>
     <li>
       <a href="https://www.linkedin.com/in/thomas-bouvier/">
@@ -26,6 +28,11 @@
     </li>
   </ul>
 
-  Built with HTML & CSS with Sass atop Hugo (last build: {{ now.Format "2 January 2006 15:04" }}). This site intends to reduce its contribution to digital industry ecological footprint. Therefore the whole site and server services has been thought over. I do not track your personal data. Subscribe to my <a href="{{ "/index.xml" | relLangURL }}">RSS feed</a>.
+  {{ $date := now.Format "January 2, 2006 at 15:04" }}
+  {{ if eq .Site.Language.LanguageName "FR" }}
+    {{ $date = (printf "%d %s %d à %dh%d" (now.Day) (index $.Site.Data.months (printf "%d" now.Month)) (now.Year) (now.Hour) (now.Minute)) }}
+  {{ end }}
+
+  {{ i18n "footer" (dict "Time" ($date) "RSS" ("/index.xml" | relLangURL)) | safeHTML }}
 
 </footer>

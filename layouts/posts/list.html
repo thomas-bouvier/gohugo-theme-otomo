@@ -10,7 +10,7 @@
     <div class="rss-feed">
       {{ with .OutputFormats.Get "rss" -}}
         <p>
-          Don't miss any post by subscribing to my <a href="{{ .Permalink }}">blog RSS feed</a>.
+          {{ i18n "dont-miss-post" . | safeHTML }}
         </p>
       {{ end -}}
     </div>

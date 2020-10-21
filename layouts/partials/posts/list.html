@@ -13,7 +13,12 @@
         {{ end }}
 
         <p class="intro">
-          {{ $post.Params.date.Format "2 January 2006 15:04" }} · {{ $post.ReadingTime }} min
+          {{ $date := $post.Params.date.Format "January 2, 2006 at 15:04" }}
+          {{ if eq .Site.Language.LanguageName "FR" }}
+            {{ $date = (printf "%d %s %d à %dh%d" ($post.Params.date.Day) (index $.Site.Data.months (printf "%d" $post.Params.date.Month)) ($post.Params.date.Year) ($post.Params.date.Hour) ($post.Params.date.Minute)) }}
+          {{ end }}
+          
+          {{ $date }} · {{ $post.ReadingTime }} min
         </p>
 
         <h3>
