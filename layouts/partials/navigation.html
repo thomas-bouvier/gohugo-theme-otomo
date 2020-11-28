@@ -1,43 +1,43 @@
 {{ $i18n := .Site.IsMultiLingual }}
 
 <header class="nav-container">
+  <div class="container-fluid">
+    <nav class="nav-section">
 
-  <nav class="nav-section">
+      <div class="nav-controls">
 
-    <div class="nav-controls">
+        <a class="logo-link" href="{{ "/" | relLangURL }}">
+          <!-- I prefer the small logo for now -->
+          <span class="logo">{{ .Site.Params.logoSmall }}</span>
+          <span class="logo-small">{{ .Site.Params.logoSmall }}</span>
+          <span class="header-hidden">Navigate back to the homepage</span>
+        </a>
 
-      <a class="logo-link" href="{{ "/" | relLangURL }}">
-        <!-- I prefer the small logo for now -->
-        <span class="logo">{{ .Site.Params.logoSmall }}</span>
-        <span class="logo-small">{{ .Site.Params.logoSmall }}</span>
-        <span class="header-hidden">Navigate back to the homepage</span>
-      </a>
+        <div class="menu-items">
+          {{ range .Site.Menus.main }}
+            <a class="menu-item" href="{{ .URL | relLangURL }}">
+              {{ .Pre }}
+              <span>{{ .Name }}</span>
+            </a>
+          {{ end }}
+        </div>
 
-      <div class="menu-items">
-        {{ range .Site.Menus.main }}
-          <a class="menu-item" href="{{ .URL | relLangURL }}">
-            {{ .Pre }}
-            <span>{{ .Name }}</span>
-          </a>
-        {{ end }}
       </div>
 
-    </div>
+      <div class="nav-controls">
 
-    <div class="nav-controls">
+        {{ if $i18n }}
+          {{ partial "components/lang-selector.html" . }}
+        {{ end }}
 
-      {{ if $i18n }}
-        {{ partial "components/lang-selector.html" . }}
-      {{ end }}
+        <button id="themeColorButton" class="icon-wrapper"> 
+          <div id="sunRays" class="sun-rays"></div>
+          <div id="moonOrSun" class="moon-or-sun"></div>
+          <div id="moonMask" class="moon-mask"></div>
+        </button>
 
-      <button id="themeColorButton" class="icon-wrapper"> 
-        <div id="sunRays" class="sun-rays"></div>
-        <div id="moonOrSun" class="moon-or-sun"></div>
-        <div id="moonMask" class="moon-mask"></div>
-      </button>
+      </div>
+    </nav>
 
-    </div>
-
-  </nav>
-
+  </div>
 </header>
