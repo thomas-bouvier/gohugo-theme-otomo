@@ -7,7 +7,7 @@
   <ul>
     <li>
       <a href="https://github.com/thomas-bouvier">
-        Github
+        GitHub
       </a>
     </li>
     <li>
@@ -15,9 +15,8 @@
         LinkedIn
       </a>
     </li>
-    <li>CV</li>
     <li>
-      <a href="https://twitter.com/tomatrocho">
+      <a href="https://twitter.com/tbouvier_">
         Twitter
       </a>
     </li>
@@ -28,11 +27,17 @@
     </li>
   </ul>
 
-  {{ $date := now.Format "January 2, 2006 at 15:04" }}
-  {{ if eq .Site.Language.LanguageName "FR" }}
-    {{ $date = (printf "%d %s %d à %dh%d" (now.Day) (index $.Site.Data.months (printf "%d" now.Month)) (now.Year) (now.Hour) (now.Minute)) }}
-  {{ end }}
+  <p>
+    {{ i18n "code" | safeHTML }}
+  </p>
 
-  {{ i18n "footer" (dict "Time" ($date) "RSS" ("/index.xml" | relLangURL)) | safeHTML }}
+  <p>
+    {{ $date := now.Format "January 2, 2006 at 15:04" }}
+    {{ if eq .Site.Language.LanguageName "FR" }}
+      {{ $date = (printf "%d %s %d à %dh%d" (now.Day) (index $.Site.Data.months (printf "%d" now.Month)) (now.Year) (now.Hour) (now.Minute)) }}
+    {{ end }}
+
+    {{ i18n "footer" (dict "Time" ($date) "RSS" ("/index.xml" | relLangURL)) | safeHTML }}
+  </p>
 
 </footer>
