@@ -8,7 +8,7 @@
 
     <ul class="hero-links">
       <li>
-        {{ range where .Site.Menus.main "Identifier" "projects" }}
+        {{ range where .Site.Menus.main "Identifier" "posts" }}
           <a href="{{ .URL | relLangURL }}">  
             {{ .Name }}
           </a>
