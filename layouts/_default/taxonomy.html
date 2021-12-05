@@ -43,7 +43,7 @@
           <h5>{{ i18n "more-content" }}</h3>
 
           {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
-            <a class="btn btn-primary" href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}">{{ $name }}</a>
+            <a class="btn btn-secondary" href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}">{{ $name }}</a>
           {{ end }}
 
         </div>

@@ -34,7 +34,26 @@ a.btn {
     border: none;
     border-radius: 0;
     font-weight: 400;
-    font-size: .75rem;
+    font-size: .9rem;
+    font-style: normal;
+    line-height: 1.25;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    padding: .5rem;
+
+    &:hover {
+      outline: none;
+      background-color: var(--button-hover-color);
+    }
+  }
+
+  &.btn-secondary {
+    background-color: var(--button-color);
+    color: var(--inverted-color);
+    border: none;
+    border-radius: 0;
+    font-weight: 400;
+    font-size: .9rem;
     font-style: normal;
     line-height: 1.25;
     text-transform: uppercase;

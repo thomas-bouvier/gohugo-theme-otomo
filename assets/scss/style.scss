@@ -36,12 +36,11 @@
 body {
   color: var(--secondary-text-color);
   background-color: var(--background-color);
-
 }
 
 p {
   font-family: 'Calibre', sans-serif;
-  font-size: 20px;
+  font-size: 1.4rem;
   font-style: normal;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
@@ -74,7 +73,6 @@ a {
 
 .uppercase {
   font-weight: 400;
-  font-size: .75rem;
   font-style: normal;
   line-height: 1.25;
   text-transform: uppercase;
