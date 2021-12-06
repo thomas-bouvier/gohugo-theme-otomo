@@ -3,17 +3,12 @@
 
   {{- partial "head.html" . -}}
 
-  <body>
+  <body class="content">
 
     {{ partial "hero.html" . }}
 
-    <div class="content">
-
-      {{- block "main" . }}
-      
-      {{- end }}
-
-    </div>
+    {{- block "main" . }}
+    {{- end }}
 
     {{- partial "footer.html" . -}}
 
