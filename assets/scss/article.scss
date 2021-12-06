@@ -10,10 +10,6 @@ article {
 
   p {
     width: 100%;
-    font-family: 'Calibre', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    -webkit-font-smoothing: antialiased;
     line-height: 1.5em;
     padding-bottom: 1em;
 
@@ -33,6 +29,10 @@ article {
       line-height: 1.2rem;
       padding-top: 5px;
     }
+  }
+
+  ul, ol {
+    padding-bottom: 1em;
   }
 
   .img-zoom {
