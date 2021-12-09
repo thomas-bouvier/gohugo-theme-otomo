@@ -4,61 +4,67 @@
 
   <div class="heading-container">
 
-    <h1 class="hero-heading">
-      <a href="/">
-        {{ .Site.Params.logo }}
-      </a>
-    </h1>
+    <div class="row">
+      <div class="col-xl-9">
 
-    <p class="hero-description">
-      {{ .Site.Params.Description }}
-    </p>
-
-    <nav>
-      <ul class="hero-links">
-        <!--
-          {{ range where .Site.Menus.main "Identifier" "posts" }}
-          <li>
-            <a href="{{ .URL | relLangURL }}">  
-              {{ .Name }}
-            </a>
-          </li>
-          {{ end }}
-        -->
-
-        {{ range where .Site.Menus.main "Identifier" "projects" }}
-        <li>
-          <a class="btn btn-primary" href="{{ .URL | relLangURL }}">  
-            {{ .Name }}
+        <h1 class="hero-heading">
+          <a href="/">
+            {{ .Site.Params.logo }}
           </a>
-        </li>
-        {{ end }}
-      
-        {{ range where .Site.Menus.main "Identifier" "about" }}
-        <li>
-          <a class="btn btn-primary" href="{{ .URL | relLangURL }}">  
-            {{ .Name }}
-          </a>
-        </li>
-        {{ end }}
+        </h1>
 
-        {{ range site.Home.Translations }}
-        <li>
-          <a class="navbar-item" href="{{ .RelPermalink }}">
-            {{ .Language.LanguageName }}
-          </a>
-        </li>
-        {{ end }}
+        <p class="hero-description">
+          {{ .Site.Params.Description }}
+        </p>
 
-        <li>
-          <button id="themeColorButton" class="icon-wrapper"> 
-            <div id="sunRays" class="sun-rays"></div>
-            <div id="moonOrSun" class="moon-or-sun"></div>
-            <div id="moonMask" class="moon-mask"></div>
-          </button>
-        </li>
-      </ul>
-    </nav>
+        <nav>
+          <ul class="hero-links">
+            <!--
+              {{ range where .Site.Menus.main "Identifier" "posts" }}
+              <li>
+                <a href="{{ .URL | relLangURL }}">  
+                  {{ .Name }}
+                </a>
+              </li>
+              {{ end }}
+            -->
+
+            {{ range where .Site.Menus.main "Identifier" "projects" }}
+            <li>
+              <a class="btn btn-primary" href="{{ .URL | relLangURL }}">  
+                {{ .Name }}
+              </a>
+            </li>
+            {{ end }}
+          
+            {{ range where .Site.Menus.main "Identifier" "about" }}
+            <li>
+              <a class="btn btn-primary" href="{{ .URL | relLangURL }}">  
+                {{ .Name }}
+              </a>
+            </li>
+            {{ end }}
+
+            {{ range site.Home.Translations }}
+            <li>
+              <a class="navbar-item" href="{{ .RelPermalink }}">
+                {{ .Language.LanguageName }}
+              </a>
+            </li>
+            {{ end }}
+
+            <li>
+              <button id="themeColorButton" class="icon-wrapper"> 
+                <div id="sunRays" class="sun-rays"></div>
+                <div id="moonOrSun" class="moon-or-sun"></div>
+                <div id="moonMask" class="moon-mask"></div>
+              </button>
+            </li>
+          </ul>
+        </nav>
+
+      </div>
+    </div>
   </div>
   
 </section>

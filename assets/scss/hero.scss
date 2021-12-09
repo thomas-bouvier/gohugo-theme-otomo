@@ -1,14 +1,6 @@
 .heading-container {
   margin: 6rem 0;
 
-  @media screen and (max-width: $desktop){
-    width: 80%;
-  }
-
-  @media screen and (max-width: $tablet){
-    width: 100%;
-  }
-
   h1.hero-heading {
     font-family: 'Domaine';
     font-style: normal;
