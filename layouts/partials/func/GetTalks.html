@@ -1,0 +1,22 @@
+{{/*
+    GetTalks
+  
+    @context Page (.)
+  
+    @access public
+  
+    @return Collection
+            - Page (.)
+  
+    @example - Go Template
+      {{ $talks := partialCached "func/GetTalks" . "talks" }}
+  */}}
+  
+  {{ $talks := slice }}
+  
+  {{ with where site.RegularPages "Type" "talks" }}
+    {{ $talks = . }}
+  {{ end }}
+  
+  {{ return $talks }}
+  

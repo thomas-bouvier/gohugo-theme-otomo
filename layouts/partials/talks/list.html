@@ -1,0 +1,48 @@
+<section class="container-fluid">
+
+    <div class="grid">
+  
+      {{ $talks := partialCached "func/GetTalks" . "talks" }}
+      {{ $paginator := .Paginate $talks }}
+      {{ range $index, $talk := $paginator.Pages }}
+  
+        <div class="item">
+  
+          {{ with $talk.Params.thumbnail }}
+            <img src="{{ $talk.RelPermalink }}/{{ $talk.Params.thumbnail }}">
+          {{ end }}
+  
+          <p class="intro">
+            {{ $date := $talk.Params.date.Format "January 2, 2006 at 15:04" }}
+            {{ if eq .Site.Language.LanguageName "FR" }}
+              {{ $date = (printf "%d %s %d à %dh%d" ($talk.Params.date.Day) (index $.Site.Data.months (printf "%d" $talk.Params.date.Month)) ($talk.Params.date.Year) ($talk.Params.date.Hour) ($talk.Params.date.Minute)) }}
+            {{ end }}
+            
+            {{ $date }}, {{ $talk.Params.location }}
+          </p>
+  
+          <h3>
+            {{ $talk.Params.title }}
+          </h3>
+          
+          <div class="align-container">
+            <div class="information-container">
+              <p class="description">
+                {{ $talk.Params.description }}
+              </p>
+            </div>
+  
+            {{ range .Params.tags }}
+              <a class="btn btn-secondary" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+            {{ end }}
+          
+          </div>
+  
+        </div>
+  
+      {{ end }}
+  
+    </div>
+  
+  </section>
+  
