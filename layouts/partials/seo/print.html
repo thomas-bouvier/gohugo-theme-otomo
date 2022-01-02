@@ -23,8 +23,8 @@
   
 {{- if not .IsHome -}}
 
-	{{/* 1. `{.Title} | {.Site.Title}` */}}
-  {{- $.Scratch.SetInMap "seo" "title" (printf "%s | %s" .Title .Site.Title ) -}}
+	{{/* 1. `{.Title} • {.Site.Title}` */}}
+  {{- $.Scratch.SetInMap "seo" "title" (printf "%s • %s" .Title .Site.Title ) -}}
 
 {{- else -}}
 
