@@ -1,19 +1,15 @@
 .heading-container {
-  margin: 6rem 0;
+  margin: 4rem 0 6rem 0;
 
   h1.hero-heading {
-    font-family: 'Domaine';
+    font-family: 'Calibre', sans-serif;
+    font-size: 1.4rem;
     font-style: normal;
     color: var(--primary-text-color);
-    font-size: 1.5rem;
     padding-bottom: 1.5rem;
-  
-    @media screen and (max-width: $desktop) {
-      font-size: 38px
-    }
-  
-    @media screen and (max-width: $tablet) {
-      font-size: 32px;
+
+    a {
+      border-bottom: none;
     }
   }
 
