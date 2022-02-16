@@ -1,0 +1,22 @@
+{{/*
+    GetPreviews
+  
+    @context Page (.)
+  
+    @access public
+  
+    @return Collection
+            - Page (.)
+  
+    @example - Go Template
+      {{ $previews := partialCached "func/GetPreviews" . "projects" }}
+  */}}
+  
+  {{ $previews := slice }}
+  
+  {{ with where site.RegularPages "Type" "previews" }}
+    {{ $previews = . }}
+  {{ end }}
+  
+  {{ return $previews }}
+  

@@ -1,0 +1,21 @@
+{{ define "main" }}
+
+  <div class="container-fluid">
+
+    <article>
+
+      <p class="intro">
+        {{ .Params.date.Format "2 January 2006 15:04" }} · {{ .ReadingTime }} min
+      </p>
+
+      <h1>{{ .Title }}</h1>
+
+      <p>{{ .Description }}</p>
+
+      {{ .Content }}
+
+    </article>
+
+  </div>
+
+{{ end }}

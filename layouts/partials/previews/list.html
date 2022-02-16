@@ -1,0 +1,36 @@
+<section class="container-fluid">
+
+  <div class="grid">
+
+    {{ $previews := partialCached "func/GetPreviews" . "previews" }}
+    {{ $paginator := .Paginate $previews }}
+    {{ range $index, $preview := $paginator.Pages }}
+
+      <div class="item">
+
+        {{ with $preview.Params.thumbnail }}
+          <img src="{{ $preview.RelPermalink }}/{{ $preview.Params.thumbnail }}">
+        {{ end }}
+        
+        <h3>{{ $preview.Params.title }}</h3>
+        
+        <div class="align-container">
+          <div class="information-container">
+            <p class="description">
+              {{ $preview.Params.description }}
+            </p>
+          </div>
+
+          {{ range .Params.tags }}
+            <a class="btn btn-secondary" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+          {{ end }}
+
+        </div>
+
+      </div>
+
+    {{ end }}
+
+  </div>
+
+</section>
