@@ -16,15 +16,12 @@
         
         <div class="align-container">
           <div class="information-container">
+            <p>{{ i18n "intended-impact" . }}</p>
+
             <p class="description">
               {{ $preview.Params.description }}
             </p>
           </div>
-
-          {{ range .Params.tags }}
-            <a class="btn btn-secondary" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
-          {{ end }}
-
         </div>
 
       </div>
