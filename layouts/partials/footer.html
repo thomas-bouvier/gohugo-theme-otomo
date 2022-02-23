@@ -33,7 +33,7 @@
 
   <p>
     {{ $date := now.Format "January 2, 2006 at 15:04" }}
-    {{ if eq .Site.Language.LanguageName "FR" }}
+    {{ if eq .Site.Language.LanguageName "Français" }}
       {{ $date = (printf "%d %s %d à %dh%d" (now.Day) (index $.Site.Data.months (printf "%d" now.Month)) (now.Year) (now.Hour) (now.Minute)) }}
     {{ end }}
 
