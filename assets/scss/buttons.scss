@@ -25,21 +25,28 @@ a.btn {
   text-decoration: none;
 
   &.btn-primary {
-    color: var(--inverted-color);
+    color: var(--primary-text-color);
     background-color: var(--button-color);
+    border-color: var(--primary-text-color);
 
     &:hover {
       outline: 0;
+      color: var(--inverted-text-color);
+      background-color: var(--button-hover-color);
       border-color: var(--secondary-color);
     }
   }
 
   &.btn-secondary {
     color: var(--primary-text-color);
+    background-color: var(--button-color);
+    border-color: var(--primary-text-color);
 
     &:hover {
       outline: 0;
-      color: var(--inverted-color);
+      color: var(--inverted-text-color);
+      background-color: var(--button-hover-color);
+      border-color: var(--secondary-color);
     }
   }
 
