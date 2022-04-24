@@ -1,38 +1,36 @@
-<section class="container-fluid">
+<div class="grid">
 
-  <div class="grid">
+  {{ $projects := partialCached "func/GetProjects" . "projects" }}
+  {{ $paginator := .Paginate $projects }}
+  {{ range $index, $project := $paginator.Pages }}
 
-    {{ $projects := partialCached "func/GetProjects" . "projects" }}
-    {{ $paginator := .Paginate $projects }}
-    {{ range $index, $project := $paginator.Pages }}
+    <div class="item">
 
-      <div class="item">
+      {{ with $project.Params.thumbnail }}
+        <img src="{{ $project.RelPermalink }}/{{ $project.Params.thumbnail }}">
+      {{ end }}
+      
+      <div class="align-container">
+        <div class="information-container">
+          <p class="description">
+            {{ $project.Params.description }}
+          </p>
+        </div>
 
-        {{ with $project.Params.thumbnail }}
-          <img src="{{ $project.RelPermalink }}/{{ $project.Params.thumbnail }}">
-        {{ end }}
-        
         <h3>
-          <a href="{{ $project.RelPermalink }}">{{ $project.Params.title }} →</a>
+          <a href="{{ $project.RelPermalink }}">{{ $project.Params.title }}</a>
         </h3>
-        
-        <div class="align-container">
-          <div class="information-container">
-            <p class="description">
-              {{ $project.Params.description }}
-            </p>
-          </div>
 
+        <div class="mt-4">
           {{ range .Params.tags }}
             <a class="btn btn-secondary" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
           {{ end }}
-
         </div>
 
       </div>
 
-    {{ end }}
+    </div>
 
-  </div>
+  {{ end }}
 
-</section>
+</div>
