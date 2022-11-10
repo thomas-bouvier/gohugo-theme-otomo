@@ -5,13 +5,16 @@
   margin: 75px auto 0;
 }
 
+.featured-tags {
+  margin-top: 1.5rem;
+}
+
 article {
   max-width: 850px;
 
   p {
     width: 100%;
-    line-height: 1.5em;
-    padding-bottom: 1em;
+    line-height: 1.5rem;
 
     &.intro {
       font-weight: 600;

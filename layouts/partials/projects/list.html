@@ -21,7 +21,7 @@
           <a href="{{ $project.RelPermalink }}">{{ $project.Params.title }}</a>
         </h3>
 
-        <div class="mt-4">
+        <div class="featured-tags">
           {{ range .Params.tags }}
             <a class="btn btn-secondary" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
           {{ end }}

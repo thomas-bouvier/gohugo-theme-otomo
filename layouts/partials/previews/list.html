@@ -19,7 +19,7 @@
 
         <h3>{{ $preview.Params.title }}</h3>
 
-        <div class="mt-4">
+        <div class="featured-tags">
           {{ range .Params.resources }}
             <a class="btn btn-secondary" href="{{ .link }}">{{ .text }}</a>
           {{ end }}
