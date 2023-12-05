@@ -43,7 +43,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-p {
+p, ul {
   padding-bottom: 2rem;
   line-height: 1.75;
 }
@@ -54,7 +54,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
+  padding-top: 6rem;
   padding-bottom: 3rem;
+}
+
+h2 {
+  padding-bottom: 2rem;
 }
 
 h5 {

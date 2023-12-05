@@ -2,16 +2,10 @@
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-sm-4">
-      <h2 class="section-title">{{ i18n "ongoing-work" . | safeHTML }}</h2>
-      
-      <p>
-        {{ i18n "previews-intro" . | safeHTML }}
-      </p>
-      <p>
-        {{ i18n "previews-intro-projects" . | safeHTML }}
-      </p>
-    </div>
+    {{ with .Site.GetPage "home" }}
+      {{ .Content }}
+    {{ end }}
+
     <div class="col-sm-8">
       {{ partial "previews/list.html" . }}
     </div>
