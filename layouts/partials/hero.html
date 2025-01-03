@@ -13,9 +13,15 @@
           </a>
         </h1>
 
+        <!--
         <h1 class="hero-title">
           {{ .Site.Params.Description }}
         </h1>
+        -->
+
+        <p class="hero-intro">
+          {{ i18n "hero-intro" . | safeHTML }}
+        </p>
 
         <nav>
           <ul class="hero-links">
@@ -63,9 +69,6 @@
           </ul>
         </nav>
 
-        <p class="hero-intro">
-          {{ i18n "hero-intro" . | safeHTML }}
-        </p>
       </div>
     </div>
   </div>
