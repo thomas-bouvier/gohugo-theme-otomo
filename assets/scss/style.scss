@@ -102,3 +102,25 @@ a {
   text-transform: uppercase;
   letter-spacing: .1rem;
 }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 1em;
+  min-width: 400px;
+}
+
+table thead tr {
+  text-align: left;
+}
+
+table th,
+table td {
+  padding: 12px 15px;
+}
+
+table tbody tr {
+  font-size: calc(16.5px + 0.05vw);
+  border-bottom: 1px solid #333333;
+}
