@@ -25,19 +25,17 @@
 
         <nav>
           <ul class="hero-links">
-            <!--
-              {{ range where .Site.Menus.main "Identifier" "posts" }}
-              <li>
-                <a href="{{ .URL | relLangURL }}">  
-                  {{ .Name }}
-                </a>
-              </li>
-              {{ end }}
-            -->
+            {{ range where .Site.Menus.main "Identifier" "posts" }}
+            <li>
+              <a class="btn btn-primary" href="{{ .URL | relLangURL }}">
+                {{ .Name }}
+              </a>
+            </li>
+            {{ end }}
 
             {{ range where .Site.Menus.main "Identifier" "projects" }}
             <li>
-              <a class="btn btn-primary" href="{{ .URL | relLangURL }}">  
+              <a class="btn btn-primary" href="{{ .URL | relLangURL }}">
                 {{ .Name }}
               </a>
             </li>
@@ -45,7 +43,7 @@
           
             {{ range where .Site.Menus.main "Identifier" "about" }}
             <li>
-              <a class="btn btn-primary" href="{{ .URL | relLangURL }}">  
+              <a class="btn btn-primary" href="{{ .URL | relLangURL }}">
                 {{ .Name }}
               </a>
             </li>
