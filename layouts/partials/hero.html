@@ -33,6 +33,14 @@
             </li>
             {{ end }}
 
+            {{ range where .Site.Menus.main "Identifier" "research" }}
+            <li>
+              <a class="btn btn-primary" href="{{ .URL | relLangURL }}">
+                {{ .Name }}
+              </a>
+            </li>
+            {{ end }}
+
             {{ range where .Site.Menus.main "Identifier" "projects" }}
             <li>
               <a class="btn btn-primary" href="{{ .URL | relLangURL }}">
