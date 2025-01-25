@@ -14,6 +14,7 @@ article {
 
   p {
     width: 100%;
+    font-size: calc(16.5px + 0.05vw);
 
     &.intro {
       font-weight: 600;
@@ -35,6 +36,7 @@ article {
 
   ul, ol {
     padding-bottom: 1em;
+    font-size: calc(16px + 0.05vw);
   }
 
   .img-zoom {
