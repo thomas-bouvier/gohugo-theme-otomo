@@ -5,12 +5,19 @@
     <article>
 
       <p class="intro">
-        {{ .Params.date.Format "2 January 2006 15:04" }} · {{ .ReadingTime }} min
+        {{ $date := .Params.date.Format "January 2, 2006" }}
+        {{ if eq .Site.Language.LanguageCode "fr-FR" }}
+          {{ $date = (printf "%d %s %d" (.Params.date.Day) (index $.Site.Data.months (printf "%d" .Params.date.Month)) (.Params.date.Year)) }}
+        {{ end }}
+
+        {{ $date }} · {{ .ReadingTime }} min
       </p>
 
       <h1>{{ .Title }}</h1>
 
-      <p>{{ .Description }}</p>
+      <!--
+        <p>{{ .Description }}</p>
+      -->
 
       {{ .Content }}
 
