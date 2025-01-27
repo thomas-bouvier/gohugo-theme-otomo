@@ -13,11 +13,6 @@
       text-decoration: none;
     }
   }
-
-  p.hero-intro {
-    margin-bottom: 0;
-    padding-bottom: 2rem;
-  }
   
   ul.hero-links {
     list-style: none outside;
@@ -34,4 +29,8 @@
       margin: 0 1.5rem 0 0;
     }
   }
+}
+
+p.hero-intro {
+  font-size: .95em; 
 }
