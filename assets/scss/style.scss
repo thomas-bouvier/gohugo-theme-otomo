@@ -96,6 +96,32 @@ a {
   padding-right: 3rem;
 }
 
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -20px; /* Negative margin to counteract column padding */
+}
+
+.col {
+  flex: 1; /* Equal width columns */
+  box-sizing: border-box;
+  padding: 40px; /* Added margin for more spacing between columns */
+}
+
+@media (min-width: 768px) {
+  .col-md-6 {
+    flex: 0 0 50%; /* Take up 50% of the width */
+    max-width: 50%;
+  }
+}
+
+@media (min-width: 576px) {
+  .col-sm-6 {
+    flex: 0 0 50%; /* Take up 50% of the width */
+    max-width: 50%;
+  }
+}
+
 .section-title {
   font-weight: 400;
   font-style: normal;
