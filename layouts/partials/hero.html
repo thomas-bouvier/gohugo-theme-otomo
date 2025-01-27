@@ -4,79 +4,76 @@
 
   <div class="heading-container">
 
-    <div class="row">
-      <div class="col-xl-9">
+    <h1 class="hero-heading">
+      <a href="/">
+        {{ .Site.Params.logo }}
+      </a>
+    </h1>
 
-        <h1 class="hero-heading">
-          <a href="/">
-            {{ .Site.Params.logo }}
+    <!--
+    <h1 class="hero-title">
+      {{ .Site.Params.Description }}
+    </h1>
+    -->
+
+    <!--
+    <p class="hero-intro">
+      {{ i18n "hero-intro" . | safeHTML }}
+    </p>
+    -->
+
+    <nav>
+      <ul class="hero-links">
+        {{ range where .Site.Menus.main "Identifier" "posts" }}
+        <li>
+          <a class="btn btn-primary" href="{{ .URL | relLangURL }}">
+            {{ .Name }}
           </a>
-        </h1>
+        </li>
+        {{ end }}
 
-        <!--
-        <h1 class="hero-title">
-          {{ .Site.Params.Description }}
-        </h1>
-        -->
+        {{ range where .Site.Menus.main "Identifier" "research" }}
+        <li>
+          <a class="btn btn-primary" href="{{ .URL | relLangURL }}">
+            {{ .Name }}
+          </a>
+        </li>
+        {{ end }}
 
-        <p class="hero-intro">
-          {{ i18n "hero-intro" . | safeHTML }}
-        </p>
+        {{ range where .Site.Menus.main "Identifier" "projects" }}
+        <li>
+          <a class="btn btn-primary" href="{{ .URL | relLangURL }}">
+            {{ .Name }}
+          </a>
+        </li>
+        {{ end }}
+      
+        {{ range where .Site.Menus.main "Identifier" "about" }}
+        <li>
+          <a class="btn btn-primary" href="{{ .URL | relLangURL }}">
+            {{ .Name }}
+          </a>
+        </li>
+        {{ end }}
 
-        <nav>
-          <ul class="hero-links">
-            {{ range where .Site.Menus.main "Identifier" "posts" }}
-            <li>
-              <a class="btn btn-primary" href="{{ .URL | relLangURL }}">
-                {{ .Name }}
-              </a>
-            </li>
-            {{ end }}
+        {{ range site.Home.Translations }}
+        <li>
+          <a class="btn btn-secondary" href="{{ .RelPermalink }}">
+            {{ .Language.LanguageName }}
+          </a>
+        </li>
+        {{ end }}
 
-            {{ range where .Site.Menus.main "Identifier" "research" }}
-            <li>
-              <a class="btn btn-primary" href="{{ .URL | relLangURL }}">
-                {{ .Name }}
-              </a>
-            </li>
-            {{ end }}
+        <li>
+          <button id="themeColorButton" class="icon-wrapper"> 
+            <div id="sunRays" class="sun-rays"></div>
+            <div id="moonOrSun" class="moon-or-sun"></div>
+            <div id="moonMask" class="moon-mask"></div>
+          </button>
+        </li>
+      </ul>
+    </nav>
 
-            {{ range where .Site.Menus.main "Identifier" "projects" }}
-            <li>
-              <a class="btn btn-primary" href="{{ .URL | relLangURL }}">
-                {{ .Name }}
-              </a>
-            </li>
-            {{ end }}
-          
-            {{ range where .Site.Menus.main "Identifier" "about" }}
-            <li>
-              <a class="btn btn-primary" href="{{ .URL | relLangURL }}">
-                {{ .Name }}
-              </a>
-            </li>
-            {{ end }}
-
-            {{ range site.Home.Translations }}
-            <li>
-              <a class="btn btn-secondary" href="{{ .RelPermalink }}">
-                {{ .Language.LanguageName }}
-              </a>
-            </li>
-            {{ end }}
-
-            <li>
-              <button id="themeColorButton" class="icon-wrapper"> 
-                <div id="sunRays" class="sun-rays"></div>
-                <div id="moonOrSun" class="moon-or-sun"></div>
-                <div id="moonMask" class="moon-mask"></div>
-              </button>
-            </li>
-          </ul>
-        </nav>
-
-      </div>
-    </div>
   </div>
   
 </section>
