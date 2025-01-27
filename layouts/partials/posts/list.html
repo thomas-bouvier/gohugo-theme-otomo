@@ -13,9 +13,9 @@
         {{ end }}
 
         <p class="intro">
-          {{ $date := $post.Params.date.Format "January 2, 2006 at 15:04" }}
-          {{ if eq .Site.Language.LanguageName "FR" }}
-            {{ $date = (printf "%d %s %d à %dh%d" ($post.Params.date.Day) (index $.Site.Data.months (printf "%d" $post.Params.date.Month)) ($post.Params.date.Year) ($post.Params.date.Hour) ($post.Params.date.Minute)) }}
+          {{ $date := $post.Params.date.Format "January 2, 2006" }}
+          {{ if eq .Site.Language.LanguageCode "fr-FR" }}
+            {{ $date = (printf "%d %s %d" ($post.Params.date.Day) (index $.Site.Data.months (printf "%d" $post.Params.date.Month)) ($post.Params.date.Year)) }}
           {{ end }}
           
           {{ $date }} · {{ $post.ReadingTime }} min
