@@ -4,15 +4,24 @@
     <div class="row">
       <div class="col-sm-4">
         <h1>{{ i18n "projects" . }}</h1>
-        
+
+        <p>
+          {{ i18n "projects_description" . }}
+        </p>
+
+      </div>
+      <div class="col-sm-8">
+        {{ partial "projects/list.html" . }}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="rss-feed">
         {{ with .OutputFormats.Get "rss" -}}
           <p>
             {{ i18n "dont-miss-project" . | safeHTML }}
           </p>
         {{ end -}}
-      </div>
-      <div class="col-sm-8">
-        {{ partial "projects/list.html" . }}
       </div>
     </div>
   </div>
