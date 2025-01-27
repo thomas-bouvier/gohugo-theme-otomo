@@ -5,20 +5,13 @@
     font-size: 1.1rem;
     font-style: normal;
     color: var(--primary-text-color);
+    margin-top: 8rem;
     padding-bottom: 1.5rem;
 
     a {
       border-bottom: none;
       text-decoration: none;
     }
-  }
-
-  h1.hero-title {
-    font-size: 3rem;
-    color: var(--primary-text-color);
-    margin-bottom: 0;
-    padding-bottom: 2rem;
-    padding-top: 0;
   }
 
   p.hero-intro {
