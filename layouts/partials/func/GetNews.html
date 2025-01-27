@@ -1,0 +1,21 @@
+{{/*
+  GetNews
+
+  @context Page (.)
+
+  @access public
+
+  @return Collection
+          - Page (.)
+
+  @example - Go Template
+    {{ $news := partialCached "func/GetNews" . "news" }}
+*/}}
+
+{{ $news := slice }}
+
+{{ with where site.RegularPages "Type" "news" }}
+  {{ $news = . }}
+{{ end }}
+
+{{ return $news }}
