@@ -2,11 +2,9 @@
 
   <div class="container-fluid">
     <h1>{{ i18n "blog" . }}</h1>
-  </div>
 
-  {{ partial "posts/list.html" . }}
+    {{ partial "posts/list.html" . }}
 
-  <div class="container-fluid">
     <div class="rss-feed">
       {{ with .OutputFormats.Get "rss" -}}
         <p>

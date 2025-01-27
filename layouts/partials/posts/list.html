@@ -1,47 +1,43 @@
-<section class="container-fluid">
+<div class="grid">
 
-  <div class="grid">
+  {{ $posts := partialCached "func/GetPosts" . "posts" }}
+  {{ $paginator := .Paginate $posts }}
+  {{ range $index, $post := $paginator.Pages }}
 
-    {{ $posts := partialCached "func/GetPosts" . "posts" }}
-    {{ $paginator := .Paginate $posts }}
-    {{ range $index, $post := $paginator.Pages }}
+    <div class="item">
 
-      <div class="item">
+      {{ with $post.Params.thumbnail }}
+        <img src="{{ $post.RelPermalink }}/{{ $post.Params.thumbnail }}">
+      {{ end }}
 
-        {{ with $post.Params.thumbnail }}
-          <img src="{{ $post.RelPermalink }}/{{ $post.Params.thumbnail }}">
+      <p class="intro">
+        {{ $date := $post.Params.date.Format "January 2, 2006" }}
+        {{ if eq .Site.Language.LanguageCode "fr-FR" }}
+          {{ $date = (printf "%d %s %d" ($post.Params.date.Day) (index $.Site.Data.months (printf "%d" $post.Params.date.Month)) ($post.Params.date.Year)) }}
         {{ end }}
-
-        <p class="intro">
-          {{ $date := $post.Params.date.Format "January 2, 2006" }}
-          {{ if eq .Site.Language.LanguageCode "fr-FR" }}
-            {{ $date = (printf "%d %s %d" ($post.Params.date.Day) (index $.Site.Data.months (printf "%d" $post.Params.date.Month)) ($post.Params.date.Year)) }}
-          {{ end }}
-          
-          {{ $date }} · {{ $post.ReadingTime }} min
-        </p>
-
-        <h3>
-          <a href="{{ $post.RelPermalink }}">{{ $post.Params.title }} →</a>
-        </h3>
         
-        <div class="align-container">
-          <div class="information-container">
-            <p class="description">
-              {{ $post.Params.description }}
-            </p>
-          </div>
+        {{ $date }} · {{ $post.ReadingTime }} min
+      </p>
 
-          {{ range .Params.tags }}
-            <a class="btn btn-secondary" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
-          {{ end }}
-        
+      <h3>
+        <a href="{{ $post.RelPermalink }}">{{ $post.Params.title }} →</a>
+      </h3>
+      
+      <div class="align-container">
+        <div class="information-container">
+          <p class="description">
+            {{ $post.Params.description }}
+          </p>
         </div>
 
+        {{ range .Params.tags }}
+          <a class="btn btn-secondary" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+        {{ end }}
+      
       </div>
 
-    {{ end }}
+    </div>
 
-  </div>
+  {{ end }}
 
-</section>
+</div>
