@@ -1,12 +1,22 @@
 {{ define "main" }}
 
 <div class="container-fluid">
+
+  <!-- Display some custom content, if any -->
   <div class="row">
     {{ with .Site.GetPage "home" }}
       {{ .Content }}
     {{ end }}
+  </div>
 
-    <div class="col-sm-8">
+  <div class="row">
+    <div class="col col-md-6">
+      <p>
+        {{ i18n "hero-intro" . | safeHTML }}
+      </p>
+    </div>
+
+    <div class="col col-md-6">
       {{ partial "news/list.html" . }}
     </div>
   </div>
