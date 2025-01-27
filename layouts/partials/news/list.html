@@ -1,35 +1,28 @@
-<div class="grid">
+{{ $news := partialCached "func/GetNews" . "news" }}
+{{ $paginator := .Paginate $news }}
+{{ range $index, $news := $paginator.Pages }}
 
-  {{ $news := partialCached "func/GetNews" . "news" }}
-  {{ $paginator := .Paginate $news }}
-  {{ range $index, $news := $paginator.Pages }}
+  <div class="item">
 
-    <div class="item">
-
-      <div class="align-container">
-        <div class="information-container">
-          <p class="description">
-            {{ $news.Params.description }}
-          </p>
-        </div>
-
-        <p class="intro">
-          {{ $date := $news.Params.date.Format "January 2, 2006" }}
-          {{ if eq .Site.Language.LanguageCode "fr-FR" }}
-            {{ $date = (printf "%d %s %d" ($news.Params.date.Day) (index $.Site.Data.months (printf "%d" $news.Params.date.Month)) ($news.Params.date.Year)) }}
-          {{ end }}
-
-          {{ $date }}
-        </p>
-
-        <h3>
-          <a href="{{ $news.RelPermalink }}">{{ $news.Params.title }}</a>
-        </h3>
-
-      </div>
-
+    <div class="information-container">
+      <p class="description">
+        {{ $news.Params.description }}
+      </p>
     </div>
 
-  {{ end }}
+    <p class="intro">
+      {{ $date := $news.Params.date.Format "January 2, 2006" }}
+      {{ if eq .Site.Language.LanguageCode "fr-FR" }}
+        {{ $date = (printf "%d %s %d" ($news.Params.date.Day) (index $.Site.Data.months (printf "%d" $news.Params.date.Month)) ($news.Params.date.Year)) }}
+      {{ end }}
 
-</div>
+      {{ $date }}
+    </p>
+
+    <h3>
+      <a href="{{ $news.RelPermalink }}">{{ $news.Params.title }} →</a>
+    </h3>
+
+  </div>
+
+{{ end }}
