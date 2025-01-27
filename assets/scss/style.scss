@@ -120,9 +120,16 @@ a {
 }
 
 .col {
-  flex: 1; /* Equal width columns */
+  flex: 1 1 100%;
   box-sizing: border-box;
   padding: 40px; /* Added margin for more spacing between columns */
+}
+
+@media (min-width: 992px) {
+  .col-lg-6 {
+    flex: 0 0 50%; /* Take up 50% of the width */
+    max-width: 50%;
+  }
 }
 
 @media (min-width: 768px) {
