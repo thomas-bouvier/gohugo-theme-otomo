@@ -1,5 +1,5 @@
 {{ $news := partialCached "func/GetNews" . "news" }}
-{{ $paginator := .Paginate $news }}
+{{ $paginator := .Paginate $news 4 }}
 {{ range $index, $news := $paginator.Pages }}
 
   <div class="item">
