@@ -4,11 +4,6 @@ footer {
   padding: 4rem;
   border-radius: 20%;
 
-  h3 {
-    font-size: 3em;
-    margin-bottom: 5rem;
-  }
-
   ul {
     list-style: none outside;
     padding: 0;
@@ -16,7 +11,7 @@ footer {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
-    font-size: 1.5rem;
+    font-size: 1.3em !important;
     margin-bottom: 5rem;
 
     li {

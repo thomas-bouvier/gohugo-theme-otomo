@@ -44,10 +44,14 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-p, ul {
+p:not(ul p), ul:not(ul ul) {
   padding-bottom: 2rem;
   line-height: 1.75;
   font-size: .82em;
+}
+
+li {
+  padding-bottom: 15px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -111,6 +115,13 @@ a {
   max-width: 120rem;
   padding-left: 3rem;
   padding-right: 3rem;
+}
+
+@media (max-width: 767px) {
+  .container-fluid {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
 
 .row {
