@@ -1,9 +1,11 @@
 {{- $title := .Get "title" | default (.Get 0) -}}
 
-<div class="gallery">
-  {{ .Inner }}
-</div>
+<figure>
+  <div class="gallery">
+    {{ .Inner }}
+  </div>
 
-{{ with $title }}
-  <figcaption class="fig-caption">{{ $title }}</figcaption>
-{{ end }}
+  {{ with $title }}
+    <figcaption>{{ $title }}</figcaption>
+  {{ end }}
+</figure>

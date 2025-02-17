@@ -11,6 +11,7 @@
 
 article {
   max-width: 850px;
+  width: 100%;
 
   p {
     width: 100%;
@@ -35,11 +36,9 @@ article {
 
   ul, ol {
     padding-bottom: 1em;
-    font-size: calc(16px + 0.05vw);
   }
 
   .img-zoom {
-    width: 80%;
     margin: 35px auto;
 
     @media screen and (max-width: $desktop) {
@@ -47,37 +46,49 @@ article {
     }
   }
 
-  .gallery {
-    margin: 35px auto 35px;
+  figure {
     display: flex;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
 
-    @media screen and (max-width: $desktop) {
-      margin: 0 auto;
-      display: block;
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
       width: 100%;
     }
 
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
     .img-zoom {
-      flex-grow: 0;
-      flex-shrink: 0;
-      flex: 1;
       padding: 0 20px;
+      display: block;
+      flex: 1;
+      box-sizing: border-box; /* Include padding in the element's total width and height */
 
       @media screen and (max-width: $desktop) {
         padding: 0;
         width: 100%;
       }
     }
-  }
 
-  .video {
-    margin: 35px auto;
-  }
+    figcaption {
+      width: 100%; /* Ensure caption takes full width */
+      margin: 0 auto;
+      text-align: center;
+      font-style: italic;
+      padding-bottom: 1.5em;
+      font-size: 1rem;
+    }
 
-  figcaption {
-    text-align: center;
-    font-style: italic;
-    padding-bottom: 1.5em;
+    .video {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+    }
   }
 }

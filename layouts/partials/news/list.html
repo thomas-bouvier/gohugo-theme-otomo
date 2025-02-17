@@ -4,12 +4,6 @@
 
   <div class="item">
 
-    <div class="information-container">
-      <p class="description">
-        {{ $news.Params.description }}
-      </p>
-    </div>
-
     <p class="intro">
       {{ $date := $news.Params.date.Format "January 2, 2006" }}
       {{ if eq .Site.Language.LanguageCode "fr-FR" }}

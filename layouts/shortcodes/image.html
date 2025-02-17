@@ -2,15 +2,9 @@
 {{- $title := .Get "title" | default (.Get 1) -}}
 
 {{ with $src }}
-
   <div class="img-zoom">
     <a href="{{ $src }}" rel="lightbox">
       <img src="{{ $src }}" class="img-fluid">
     </a>
   </div>
-
-  {{ with $title }}
-    <figcaption class="fig-caption">{{ $title }}</figcaption>
-  {{ end }}
-
 {{ end }}
