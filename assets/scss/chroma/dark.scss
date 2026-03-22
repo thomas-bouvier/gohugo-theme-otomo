@@ -1,3 +1,5 @@
+[data-theme="dark"] {
+
 .chroma {
   color: #e6edf3;
   background-color: #0d1117;
@@ -192,6 +194,9 @@
   color: #58a6ff;
   font-weight: bold;
 }
+.chroma .p {
+  color: #e6edf3;
+}
 .chroma .c {
   color: #8b949e;
   font-style: italic;
@@ -262,3 +267,5 @@
 .chroma .x {
   color: #e6edf3;
 }
+
+} /* end [data-theme="dark"] */
