@@ -1,12 +1,38 @@
 .heading-container {
   margin: 4rem 0 4rem 0;
 
+  .hero-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-top: 8rem;
+  }
+
+  .hero-avatar-link {
+    flex-shrink: 0;
+    border-bottom: none;
+    line-height: 0;
+    margin-left: 0.2rem;
+  }
+
+  .hero-avatar {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background-color: #ffffff;
+  }
+
+  .hero-content {
+    flex: 1;
+    padding-top: 0.4rem;
+  }
+
   h1.hero-heading {
     font-size: 1.1rem;
     font-style: normal;
     color: var(--primary-text-color);
-    margin-top: 8rem;
-    padding-bottom: 1.5rem;
+    margin: 0;
+    padding-bottom: 0.8rem;
 
     a {
       border-bottom: none;
@@ -22,6 +48,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    align-items: center;
     justify-content: flex-start;
     font-size: 1rem;
   

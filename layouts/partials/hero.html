@@ -4,27 +4,21 @@
 
   <div class="heading-container">
 
-    <h1 class="hero-heading">
-      <a href="/">
-        {{ .Site.Params.logo }}
+    <div class="hero-row">
+      <a href="/" class="hero-avatar-link">
+        <img src="/avatar-white.svg" alt="Avatar" class="hero-avatar" />
       </a>
-    </h1>
 
-    <!--
-    <h1 class="hero-title">
-      {{ .Site.Params.Description }}
-    </h1>
-    -->
+      <div class="hero-content">
+        <h1 class="hero-heading">
+          <a href="/">
+            {{ .Site.Params.logo }}
+          </a>
+        </h1>
 
-    <!--
-    <p class="hero-intro">
-      {{ i18n "hero-intro" . | safeHTML }}
-    </p>
-    -->
-
-    <nav>
-      <ul class="hero-links">
-        {{ range where .Site.Menus.main "Identifier" "posts" }}
+        <nav>
+          <ul class="hero-links">
+            {{ range where .Site.Menus.main "Identifier" "posts" }}
         <li>
           <a class="btn btn-primary" href="{{ .URL | relLangURL }}">
             {{ .Name }}
@@ -71,8 +65,10 @@
             <div id="moonMask" class="moon-mask"></div>
           </button>
         </li>
-      </ul>
-    </nav>
+          </ul>
+        </nav>
+      </div>
+    </div>
 
   </div>
   
