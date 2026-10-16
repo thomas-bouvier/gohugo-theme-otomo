@@ -1,0 +1,12 @@
+{{/* Copy button for code blocks, enabled with site.Params.highlight.copy.enable */}}
+{{- if site.Params.highlight.copy.enable -}}
+  {{- $display := site.Params.highlight.copy.display | default "hover" -}}
+  {{- $copyCode := i18n "copyCode" -}}
+
+  <div class="code-copy-btn-container{{ if eq $display `hover` }} code-copy-btn-hover{{ end }}">
+    <button class="code-copy-btn" title="{{ $copyCode }}">
+      <div class="copy-icon"></div>
+      <div class="success-icon"></div>
+    </button>
+  </div>
+{{- end -}}

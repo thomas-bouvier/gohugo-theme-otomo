@@ -4,6 +4,7 @@
 
 .code-block {
   line-height: 1.25rem; /* Assuming hx-leading-5 corresponds to 1.25rem */
+  position: relative;
 }
 
 .code-block pre {
@@ -73,4 +74,61 @@
   display: block;
   width: 100%;
   background-color: rgba(var(--primary-800), 0.1);
+}
+
+/* Copy button for code blocks */
+
+.code-copy-btn-container {
+  display: flex;
+  gap: 0.25rem;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.75rem;
+  transition: opacity 0.2s;
+}
+
+/* Reveal the button on hover only, unless display = "always" */
+.code-copy-btn-container.code-copy-btn-hover {
+  opacity: 0;
+}
+
+.code-block:hover .code-copy-btn-hover,
+.code-block:focus-within .code-copy-btn-hover {
+  opacity: 1;
+}
+
+.code-copy-btn {
+  display: flex;
+  padding: 0.375rem;
+  background-color: var(--background-color);
+  border: 0.5px solid #333333;
+  border-radius: 0.375rem;
+  color: var(--secondary-text-color);
+  cursor: pointer;
+
+  &:hover {
+    color: var(--primary-text-color);
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+.code-copy-btn svg {
+  display: block;
+  width: 1rem;
+  height: 1rem;
+}
+
+.code-copy-btn .success-icon {
+  display: none;
+}
+
+.code-copy-btn.copied .copy-icon {
+  display: none;
+}
+
+.code-copy-btn.copied .success-icon {
+  display: block;
 }
