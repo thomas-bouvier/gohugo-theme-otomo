@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.LanguageCode }}">
+  <head>
+    <title>{{ .Permalink }}</title>
+    <link rel="canonical" href="{{ .Permalink }}">
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8">
+    <meta name="color-scheme" content="light dark">
+    <meta http-equiv="refresh" content="0; url={{ .Permalink }}">
+
+    {{/* Paint the redirect page black in dark mode, to avoid a white flash */}}
+    <script>
+      var dark = {{ partial "theme-detect.html" . | safeJS }}();
+      if (dark === 'true') {
+        document.documentElement.style.backgroundColor = '#000';
+      }
+    </script>
+  </head>
+</html>

@@ -4,6 +4,7 @@ $tablet: 767px;
 $desktop: 1070px;
 
 :root {
+  color-scheme: light;
   --primary-text-color: #000000;
   --secondary-text-color: #262626;
   --primary-color: #cbffea;
@@ -19,6 +20,7 @@ $desktop: 1070px;
 // #FCF6EF
 
 [data-theme="dark"] {
+  color-scheme: dark;
   --primary-text-color: #fff;
   --secondary-text-color: rgb(229, 231, 235);
   --primary-color: #cbffea;

@@ -1,0 +1,11 @@
+{{/* Detects the color theme from localStorage, falling back to the OS
+     preference the first time. Yields "true" for dark, "false" for light.
+     Must be called as an expression: {{ partial "theme-detect.html" . }}() */}}
+(function () {
+  var dark = localStorage.getItem("dark");
+  if (dark === null) {
+    dark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'true' : 'false';
+    localStorage.setItem("dark", dark);
+  }
+  return dark;
+})

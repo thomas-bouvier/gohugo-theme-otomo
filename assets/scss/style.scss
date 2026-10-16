@@ -34,6 +34,10 @@
   color: white;
 }
 
+html {
+  background-color: var(--background-color);
+}
+
 body {
   color: var(--secondary-text-color);
   background-color: var(--background-color);
