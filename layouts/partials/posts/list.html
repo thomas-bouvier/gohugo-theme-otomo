@@ -22,19 +22,14 @@
       <h3>
         <a href="{{ $post.RelPermalink }}">{{ $post.Params.title }} →</a>
       </h3>
-      
-      <div class="align-container">
-        <div class="information-container">
-          <p class="description">
-            {{ $post.Params.description }}
-          </p>
-        </div>
 
-        {{ range .Params.tags }}
-          <a class="btn btn-secondary" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
-        {{ end }}
-      
-      </div>
+      <p class="description">
+        {{ $post.Params.description }}
+      </p>
+
+      {{ range .Params.tags }}
+        <a class="btn btn-secondary" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+      {{ end }}
 
     </div>
 
