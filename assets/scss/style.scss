@@ -19,6 +19,20 @@
   src: url('/fonts/Inter/Inter-Regular.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'TX-02';
+  font-display: swap;
+  src: url('/fonts/TX-02/TX-02-Regular.woff2') format('woff2');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'TX-02';
+  font-display: swap;
+  src: url('/fonts/TX-02/TX-02-Bold.woff2') format('woff2');
+  font-weight: 700;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -41,17 +55,17 @@ html {
 body {
   color: var(--secondary-text-color);
   background-color: var(--background-color);
-  font-family: 'Inter', sans-serif;
-  font-size: 1.3em;
+  font-family: var(--font-mono);
+  font-size: 1em;
   font-style: normal;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
 }
 
 p:not(ul p), ul:not(ul ul) {
-  padding-bottom: 2rem;
-  line-height: 1.75;
-  font-size: .82em;
+  padding-bottom: 1.5rem;
+  line-height: 1.6;
+  font-size: .9em;
 }
 
 li {
@@ -64,28 +78,31 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 2em;
-  padding-bottom: 3rem;
-}
-
-h2 {
-  padding-top: 3rem;
-  padding-bottom: 2.5rem;
-}
-
-h3 {
-  padding-top: 2.5rem;
+  font-size: 1.5em;
   padding-bottom: 2rem;
 }
 
-h4 {
+h2 {
   padding-top: 2rem;
   padding-bottom: 1.5rem;
+  font-size: 1.4em;
+}
+
+h3 {
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  font-size: 1.25em;
+}
+
+h4 {
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+  font-size: 1.1em;
 }
 
 h5 {
-  padding-top: 1.5rem;
-  padding-bottom: 1rem;
+  padding-top: 1.25rem;
+  padding-bottom: .75rem;
 }
 
 h6 {

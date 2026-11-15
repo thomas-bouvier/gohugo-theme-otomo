@@ -6,7 +6,7 @@
 }
 
 .featured-tags {
-  margin-top: 1.5rem;
+  margin-top: 0;
 }
 
 article {
@@ -20,16 +20,16 @@ article {
       font-weight: 600;
       font-size: .875rem;
       font-style: normal;
-      color: inherit;
+      color: var(--muted-text-color);
       line-height: 1.25rem;
       text-transform: uppercase;
       letter-spacing: .1rem;
     }
 
     &.description {
-      font-size: 20px;
+      font-size: 1em;
       font-weight: 400;
-      line-height: 1.2rem;
+      line-height: 1.6;
       padding-top: 5px;
     }
   }

@@ -5,8 +5,12 @@ $desktop: 1070px;
 
 :root {
   color-scheme: light;
+  /* TX-02 (Berkeley Mono) is proprietary: the font files are not shipped
+     with the theme. */
+  --font-mono: "TX-02", ui-monospace, "SFMono-Regular", "Menlo", "Consolas", "Liberation Mono", monospace;
   --primary-text-color: #000000;
-  --secondary-text-color: #262626;
+  --secondary-text-color: #4b5563;
+  --muted-text-color: #6b7280;
   --primary-color: #cbffea;
   --secondary-color: #09664d;
   --button-color: #fff;
@@ -14,7 +18,8 @@ $desktop: 1070px;
   --background-color: #fff;
   --footer-color: #fff3f3;
   --inverted-text-color: #fff;
-  --selection-color: #c6c6c6
+  --selection-color: #c6c6c6;
+  --border-color: #e0e0e0
 }
 
 // #FCF6EF
@@ -22,12 +27,14 @@ $desktop: 1070px;
 [data-theme="dark"] {
   color-scheme: dark;
   --primary-text-color: #fff;
-  --secondary-text-color: rgb(229, 231, 235);
+  --secondary-text-color: #b3b9c4;
+  --muted-text-color: #6b7280;
   --primary-color: #cbffea;
   --secondary-color: #09664d;
   --button-color: #221d23;
   --button-hover-color: #221d23;
   --background-color: #000;
   --footer-color: #172f33cc;
-  --selection-color: #09664d
+  --selection-color: #09664d;
+  --border-color: #333333
 }

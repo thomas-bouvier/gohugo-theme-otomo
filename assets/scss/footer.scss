@@ -1,8 +1,9 @@
 footer {
   background-color: var(--footer-color);
   margin-top: 8rem;
-  padding: 4rem;
-  border-radius: 20%;
+  padding: 3rem 2rem;
+  /* journal-style rule separating the footer from the content */
+  border-top: 2px solid var(--border-color);
 
   ul {
     list-style: none outside;
@@ -11,8 +12,8 @@ footer {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
-    font-size: 1.3em !important;
-    margin-bottom: 5rem;
+    font-size: 1em !important;
+    margin-bottom: 2rem;
 
     li {
       margin: 0 2rem 2rem 0;

@@ -21,7 +21,7 @@
 
             {{ range where .Site.Menus.main "Identifier" "research" }}
             <li>
-              <a class="btn btn-primary" href="{{ .URL | relLangURL }}">
+              <a href="{{ .URL | relLangURL }}">
                 {{ .Name }}
               </a>
             </li>
@@ -29,7 +29,7 @@
 
             {{ range where .Site.Menus.main "Identifier" "posts" }}
             <li>
-              <a class="btn btn-primary" href="{{ .URL | relLangURL }}">
+              <a href="{{ .URL | relLangURL }}">
                 {{ .Name }}
               </a>
             </li>
@@ -37,7 +37,7 @@
 
             {{ range where .Site.Menus.main "Identifier" "projects" }}
             <li>
-              <a class="btn btn-primary" href="{{ .URL | relLangURL }}">
+              <a href="{{ .URL | relLangURL }}">
                 {{ .Name }}
               </a>
             </li>
@@ -45,7 +45,7 @@
           
             {{ range where .Site.Menus.main "Identifier" "about" }}
             <li>
-              <a class="btn btn-primary" href="{{ .URL | relLangURL }}">
+              <a href="{{ .URL | relLangURL }}">
                 {{ .Name }}
               </a>
             </li>
@@ -53,7 +53,7 @@
 
             {{ range site.Home.Translations }}
             <li>
-              <a class="btn btn-secondary" href="{{ .RelPermalink }}">
+              <a href="{{ .RelPermalink }}">
                 {{ .Language.LanguageName }}
               </a>
             </li>

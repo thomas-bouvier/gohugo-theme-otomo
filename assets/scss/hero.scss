@@ -1,11 +1,13 @@
 .heading-container {
-  margin: 4rem 0 4rem 0;
+  margin: 3rem 0 3rem 0;
+  /* journal-style rule separating the header from the content */
+  border-bottom: 2px solid var(--border-color);
 
   .hero-row {
     display: flex;
     align-items: flex-start;
     gap: 1.5rem;
-    margin-top: 8rem;
+    margin-top: 4rem;
   }
 
   .hero-avatar-link {
@@ -28,7 +30,7 @@
   }
 
   h1.hero-heading {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     font-style: normal;
     color: var(--primary-text-color);
     margin: 0;
@@ -43,21 +45,33 @@
   ul.hero-links {
     list-style: none outside;
     margin-bottom: 0;
-    padding-bottom: 2rem;
+    padding-bottom: 1.5rem;
     padding-left: 0;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
     justify-content: flex-start;
-    font-size: 1rem;
+    font-size: 1.1rem;
   
     li {
       margin: 0 1.5rem 0 0;
+    }
+
+    a {
+      text-underline-offset: 4px;
+      text-decoration-thickness: 2px;
+
+      /* terminal-style inversion on hover */
+      &:hover {
+        color: var(--background-color);
+        background-color: var(--primary-text-color);
+        text-decoration-color: var(--primary-text-color);
+      }
     }
   }
 }
 
 p.hero-intro {
-  font-size: .95em; 
+  font-size: 1.25em; 
 }

@@ -2,7 +2,7 @@
   
   .item {
     display: inline-block;
-    margin-top: 6rem;
+    margin-top: 3rem;
   
     &:nth-of-type(1) {
       margin-top: 0;
@@ -29,12 +29,16 @@
   /* to make the entire div clickable */
   width: 100%;
   margin: 0 auto;
-  padding: 0;
+  /* border-box so padding and border do not break the grid column math */
+  box-sizing: border-box;
+  /* card boundary, so cards stand out from their inner elements */
+  border: 1px solid var(--border-color);
+  padding: 1.25rem;
   display: inline-block;
   /* inline-block aligns on the text baseline by default;
      align the cards of a same row on their top edge instead */
   vertical-align: top;
-  margin-top: 4rem;
+  margin-top: 2.5rem;
 
   &:nth-of-type(1) {
     margin-top: 0
@@ -43,12 +47,25 @@
   img {
     max-width: 100%;
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 1rem;
+  }
+
+  /* journal-style covers: grayscale by default, colored on hover */
+  @media (hover: hover) {
+    img {
+      filter: grayscale(100%);
+      transition: filter .5s linear;
+    }
+
+    &:hover img {
+      filter: grayscale(0);
+      transition: filter 1s linear;
+    }
   }
 
   h3 {
-    padding: 1rem 0;
-    font-size: 1.5rem;
+    padding: 0 0 .5rem;
+    font-size: 1.2rem;
     font-weight: 400;
     line-height: 1.3;
 
@@ -67,17 +84,16 @@
       font-weight: 600;
       font-size: .875rem;
       font-style: normal;
-      color: inherit;
+      color: var(--muted-text-color);
       text-transform: uppercase;
       letter-spacing: .1em;
-      padding-bottom: 1rem;
+      padding-bottom: .5rem;
     }
 
     &.description {
       font-weight: 400;
-      padding-top: 1rem;
-      padding-bottom: 1rem;
-      font-size: .95em;
+      padding: .5rem 0 1rem;
+      font-size: .9em;
     }
   }
 

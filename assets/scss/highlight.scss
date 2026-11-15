@@ -8,6 +8,7 @@
 }
 
 .code-block pre {
+  font-family: var(--font-mono);
   font-size: 0.9em;
   background-color: rgba(var(--background-color), 0.05);
   overflow-x: auto;
