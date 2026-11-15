@@ -7,11 +7,7 @@
       {{ i18n "projects_description" . }}
     </p>
 
-    <div class="row">
-      <div class="col col-sm-8">
-        {{ partial "projects/list.html" . }}
-      </div>
-    </div>
+    {{ partial "projects/list.html" . }}
 
     <div class="rss-feed">
       {{ with .OutputFormats.Get "rss" -}}
