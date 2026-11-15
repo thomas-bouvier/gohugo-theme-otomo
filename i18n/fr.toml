@@ -1,2 +1,8 @@
 [copyCode]
 other = "Copier le code"
+
+[darkTheme]
+other = "sombre"
+
+[lightTheme]
+other = "clair"

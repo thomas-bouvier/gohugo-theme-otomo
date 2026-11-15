@@ -54,16 +54,17 @@
             {{ range site.Home.Translations }}
             <li>
               <a href="{{ .RelPermalink }}">
-                {{ .Language.LanguageName }}
+                [{{ lower .Language.LanguageName }}]
               </a>
             </li>
             {{ end }}
 
             <li>
-              <button id="themeColorButton" class="icon-wrapper"> 
-                <div id="sunRays" class="sun-rays"></div>
-                <div id="moonOrSun" class="moon-or-sun"></div>
-                <div id="moonMask" class="moon-mask"></div>
+              {{/* Both labels are rendered and swapped with CSS, so the
+                   correct one is visible before the first paint. */}}
+              <button id="themeColorButton" class="theme-toggle">
+                <span class="theme-label-dark">[{{ i18n "darkTheme" . }}]</span>
+                <span class="theme-label-light">[{{ i18n "lightTheme" . }}]</span>
               </button>
             </li>
           </ul>

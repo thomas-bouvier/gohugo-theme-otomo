@@ -1,2 +1,8 @@
 [copyCode]
 other = "Copy code"
+
+[darkTheme]
+other = "dark"
+
+[lightTheme]
+other = "light"
