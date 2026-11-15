@@ -18,53 +18,54 @@
 
         <nav>
           <ul class="hero-links">
+
+            {{ range where .Site.Menus.main "Identifier" "research" }}
+            <li>
+              <a class="btn btn-primary" href="{{ .URL | relLangURL }}">
+                {{ .Name }}
+              </a>
+            </li>
+            {{ end }}
+
             {{ range where .Site.Menus.main "Identifier" "posts" }}
-        <li>
-          <a class="btn btn-primary" href="{{ .URL | relLangURL }}">
-            {{ .Name }}
-          </a>
-        </li>
-        {{ end }}
+            <li>
+              <a class="btn btn-primary" href="{{ .URL | relLangURL }}">
+                {{ .Name }}
+              </a>
+            </li>
+            {{ end }}
 
-        {{ range where .Site.Menus.main "Identifier" "research" }}
-        <li>
-          <a class="btn btn-primary" href="{{ .URL | relLangURL }}">
-            {{ .Name }}
-          </a>
-        </li>
-        {{ end }}
+            {{ range where .Site.Menus.main "Identifier" "projects" }}
+            <li>
+              <a class="btn btn-primary" href="{{ .URL | relLangURL }}">
+                {{ .Name }}
+              </a>
+            </li>
+            {{ end }}
+          
+            {{ range where .Site.Menus.main "Identifier" "about" }}
+            <li>
+              <a class="btn btn-primary" href="{{ .URL | relLangURL }}">
+                {{ .Name }}
+              </a>
+            </li>
+            {{ end }}
 
-        {{ range where .Site.Menus.main "Identifier" "projects" }}
-        <li>
-          <a class="btn btn-primary" href="{{ .URL | relLangURL }}">
-            {{ .Name }}
-          </a>
-        </li>
-        {{ end }}
-      
-        {{ range where .Site.Menus.main "Identifier" "about" }}
-        <li>
-          <a class="btn btn-primary" href="{{ .URL | relLangURL }}">
-            {{ .Name }}
-          </a>
-        </li>
-        {{ end }}
+            {{ range site.Home.Translations }}
+            <li>
+              <a class="btn btn-secondary" href="{{ .RelPermalink }}">
+                {{ .Language.LanguageName }}
+              </a>
+            </li>
+            {{ end }}
 
-        {{ range site.Home.Translations }}
-        <li>
-          <a class="btn btn-secondary" href="{{ .RelPermalink }}">
-            {{ .Language.LanguageName }}
-          </a>
-        </li>
-        {{ end }}
-
-        <li>
-          <button id="themeColorButton" class="icon-wrapper"> 
-            <div id="sunRays" class="sun-rays"></div>
-            <div id="moonOrSun" class="moon-or-sun"></div>
-            <div id="moonMask" class="moon-mask"></div>
-          </button>
-        </li>
+            <li>
+              <button id="themeColorButton" class="icon-wrapper"> 
+                <div id="sunRays" class="sun-rays"></div>
+                <div id="moonOrSun" class="moon-or-sun"></div>
+                <div id="moonMask" class="moon-mask"></div>
+              </button>
+            </li>
           </ul>
         </nav>
       </div>
