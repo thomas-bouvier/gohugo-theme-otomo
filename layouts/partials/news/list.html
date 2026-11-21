@@ -6,7 +6,7 @@
 
     <p class="intro">
       {{ $date := $news.Params.date.Format "January 2, 2006" }}
-      {{ if eq .Site.Language.LanguageCode "fr-FR" }}
+      {{ if eq .Site.Language.Locale "fr-FR" }}
         {{ $date = (printf "%d %s %d" ($news.Params.date.Day) (index $.Site.Data.months (printf "%d" $news.Params.date.Month)) ($news.Params.date.Year)) }}
       {{ end }}
 

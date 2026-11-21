@@ -6,7 +6,7 @@
     <span class="icon has-text-primary">
     </span>
     <span>
-      {{ site.Language.LanguageName }}
+      {{ site.Language.Label }}
     </span>
   </a>
   -->
@@ -14,7 +14,7 @@
   <div class="navbar-dropdown">
     {{ range $langs }}
     <a class="navbar-item" href="{{ .RelPermalink }}">
-      {{ .Language.LanguageName }}
+      {{ .Language.Label }}
     </a>
     {{ end }}
   </div>

@@ -14,7 +14,7 @@
 
           <p class="intro">
             {{ $date := $talk.Params.date.Format "January 2, 2006" }}
-            {{ if eq .Site.Language.LanguageCode "fr-FR" }}
+            {{ if eq .Site.Language.Locale "fr-FR" }}
               {{ $date = (printf "%d %s %d" ($talk.Params.date.Day) (index $.Site.Data.months (printf "%d" $talk.Params.date.Month)) ($talk.Params.date.Year)) }}
             {{ end }}
 

@@ -54,7 +54,7 @@
             {{ range site.Home.Translations }}
             <li>
               <a href="{{ .RelPermalink }}">
-                [{{ lower .Language.LanguageName }}]
+                [{{ lower .Language.Label }}]
               </a>
             </li>
             {{ end }}

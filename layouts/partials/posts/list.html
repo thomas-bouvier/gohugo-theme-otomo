@@ -11,7 +11,7 @@
       {{ end }}
 
       {{ $date := $post.Params.date.Format "January 2, 2006" }}
-      {{ if eq .Site.Language.LanguageCode "fr-FR" }}
+      {{ if eq .Site.Language.Locale "fr-FR" }}
         {{ $date = (printf "%d %s %d" ($post.Params.date.Day) (index $.Site.Data.months (printf "%d" $post.Params.date.Month)) ($post.Params.date.Year)) }}
       {{ end }}
 
