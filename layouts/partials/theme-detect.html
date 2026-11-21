@@ -1,11 +1,17 @@
-{{/* Detects the color theme from localStorage, falling back to the OS
-     preference the first time. Yields "true" for dark, "false" for light.
-     Must be called as an expression: {{ partial "theme-detect.html" . }}() */}}
+{{/* Detects the color theme: an explicit choice in localStorage wins, otherwise
+     the live OS preference (prefers-color-scheme) is used and NOT persisted, so
+     the site keeps following the OS setting. Yields "true" for dark, "false" for
+     light. Must be called as an expression: {{ partial "theme-detect.html" . }}() */}}
 (function () {
-  var dark = localStorage.getItem("dark");
-  if (dark === null) {
-    dark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'true' : 'false';
-    localStorage.setItem("dark", dark);
+  var choice = localStorage.getItem("theme");
+  if (choice === "dark") {
+    return 'true';
   }
-  return dark;
+  if (choice === "light") {
+    return 'false';
+  }
+  // Legacy key: older versions cached the OS preference here, which shadowed
+  // later OS changes. Drop it so the live preference is used instead.
+  localStorage.removeItem("dark");
+  return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'true' : 'false';
 })
