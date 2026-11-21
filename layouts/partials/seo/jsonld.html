@@ -1,0 +1,60 @@
+{{/*
+	Print Person JSON-LD structured data describing the owner of the site.
+
+	Values are read from the [params.person] table of the site
+	configuration; nothing is printed when this table is missing.
+	Only printed on the home page, where the person entity is canonical.
+
+	@access public
+
+	@context Page
+
+	@example - Go Template
+		{{ partial "seo/jsonld.html" . }}
+*/}}
+{{- $person := .Site.Params.person -}}
+{{- if and $person .IsHome -}}
+
+  {{/* Mandatory entity fields */}}
+  {{- $jsonld := newScratch -}}
+  {{- $jsonld.Set "person" (dict
+        "@context" "https://schema.org"
+        "@type" "Person"
+        "@id" (printf "%s#person" .Site.BaseURL)
+        "url" .Site.BaseURL
+        "name" $person.name
+  ) -}}
+
+  {{/* Optional fields, only included when configured */}}
+  {{- with $person.description -}}
+    {{- $jsonld.SetInMap "person" "description" . -}}
+  {{- end -}}
+  {{- with $person.jobTitle -}}
+    {{- $jsonld.SetInMap "person" "jobTitle" . -}}
+  {{- end -}}
+  {{- with $person.image -}}
+    {{- $jsonld.SetInMap "person" "image" (. | absURL) -}}
+  {{- end -}}
+  {{- with $person.email -}}
+    {{- $jsonld.SetInMap "person" "email" (printf "mailto:%s" .) -}}
+  {{- end -}}
+  {{- with $person.knowsAbout -}}
+    {{- $jsonld.SetInMap "person" "knowsAbout" . -}}
+  {{- end -}}
+  {{- with $person.sameAs -}}
+    {{- $jsonld.SetInMap "person" "sameAs" . -}}
+  {{- end -}}
+
+  {{/* Employer organization */}}
+  {{- with $person.worksFor -}}
+    {{- $jsonld.SetInMap "person" "worksFor" (dict
+          "@type" "Organization"
+          "name" .name
+          "url" .url
+    ) -}}
+  {{- end -}}
+
+  <script type="application/ld+json">
+    {{- $jsonld.Get "person" | jsonify | safeJS -}}
+  </script>
+{{- end -}}

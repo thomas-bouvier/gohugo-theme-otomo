@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="{{ $fluidbox.RelPermalink }}">
 
   {{ partial "seo/print.html" . }}
+  {{ partial "seo/jsonld.html" . }}
 
   {{ range .AlternativeOutputFormats -}}
     {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
